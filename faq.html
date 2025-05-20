@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Premium Site with Light/Dark Mode</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700;900&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --gold: #ffd700;
+      --gold-dark: #cca300;
+      --bg-dark: #0e0e1a;
+      --bg-light: #f9f9f9;
+      --text-dark: #fff;
+      --text-light: #222;
+      --header-bg-dark: rgba(10,10,20,0.98);
+      --header-bg-light: rgba(255,255,255,0.95);
+      --menu-bg-dark: #22223f;
+      --menu-bg-light: #eee;
+      --menu-text-dark: #fffacd;
+      --menu-text-light: #222;
+      --link-bg-dark: linear-gradient(to right, #ffd700, #ffcc00);
+      --link-bg-light: linear-gradient(to right, #f0c000, #d4a200);
+    }
+
+    /* Dark mode default */
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: var(--bg-dark);
+      color: var(--text-dark);
+      overflow-x: hidden;
+      transition: background 0.5s, color 0.5s;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: var(--header-bg-dark);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 20px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 0 12px var(--gold);
+      transition: background 0.5s, color 0.5s;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo img {
+      height: 35px;
+      transition: filter 0.5s;
+    }
+
+    .logo span {
+      font-weight: 800;
+      font-size: 20px;
+      display: flex;
+      align-items: center;
+      color: var(--text-dark);
+      transition: color 0.5s;
+    }
+
+    .premium-icon {
+      width: 22px;
+      margin-left: 6px;
+      filter: drop-shadow(0 0 4px var(--gold));
+      transition: filter 0.5s;
+    }
+
+    .menu-toggle {
+      font-size: 30px;
+      cursor: pointer;
+      color: var(--gold);
+      transition: transform 0.3s ease, color 0.5s;
+    }
+
+    .menu-toggle:hover {
+      transform: scale(1.1);
+    }
+
+    .menu {
+      position: absolute;
+      top: 75px;
+      right: 30px;
+      background: var(--menu-bg-dark);
+      border-radius: 12px;
+      display: none;
+      flex-direction: column;
+      width: 180px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.7);
+      z-index: 1100;
+      transition: background 0.5s, color 0.5s;
+    }
+
+    .menu a {
+      padding: 14px 18px;
+      color: var(--menu-text-dark);
+      text-decoration: none;
+      border-bottom: 1px solid #333;
+      transition: background 0.3s ease, color 0.5s;
+    }
+
+    .menu a:hover {
+      background: #33335a;
+    }
+
+    .slider {
+      width: 100%;
+      max-width: 600px;
+      height: 180px;
+      margin: 20px auto;
+      border-radius: 14px;
+      overflow: hidden;
+      position: relative;
+      box-shadow: 0 0 15px var(--gold);
+      transition: box-shadow 0.5s;
+    }
+
+    .slides {
+      display: flex;
+      animation: slide 17s infinite ease-in-out;
+    }
+
+    .slides img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      transition: filter 4s;
+    }
+
+    @keyframes slide {
+      0% { transform: translateX(0%); }
+      33% { transform: translateX(-300%); }
+      66% { transform: translateX(-200%); }
+      100% { transform: translateX(0%); }
+    }
+
+    .link-boxes {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      padding: 25px 15px;
+    }
+
+    .link-boxes a {
+      background: var(--link-bg-dark);
+      color: #111;
+      padding: 10px 20px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 14px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+      transition: all 0.3s ease;
+    }
+
+    .link-boxes a:hover {
+      transform: scale(1.06);
+      background: linear-gradient(to right, #fff400, #ffc107);
+    }
+
+    /* Light mode styles */
+    body.light-mode {
+      background: var(--bg-light);
+      color: var(--text-light);
+    }
+
+    body.light-mode header {
+      background: var(--header-bg-light);
+      box-shadow: 0 0 12px var(--gold-dark);
+      color: var(--text-light);
+    }
+
+    body.light-mode .logo span {
+      color: var(--text-light);
+    }
+
+    body.light-mode .premium-icon {
+      filter: drop-shadow(0 0 4px var(--gold-dark));
+    }
+
+    body.light-mode .menu-toggle {
+      color: var(--gold-dark);
+    }
+
+    body.light-mode .menu {
+      background: var(--menu-bg-light);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    }
+
+    body.light-mode .menu a {
+      color: var(--menu-text-light);
+      border-bottom: 1px solid #ccc;
+    }
+
+    body.light-mode .menu a:hover {
+      background: #ddd;
+      color: #111;
+    }
+
+    body.light-mode .slider {
+      box-shadow: 0 0 15px var(--gold-dark);
+    }
+
+    body.light-mode .slides img {
+      filter: brightness(0.9);
+    }
+
+    body.light-mode .link-boxes a {
+      background: var(--link-bg-light);
+      color: #111;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    }
+
+    /* Light/Dark toggle button */
+    .toggle-switch {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      user-select: none;
+      color: var(--gold);
+      font-weight: 600;
+      font-size: 16px;
+      transition: color 0.5s;
+    }
+
+    body.light-mode .toggle-switch {
+      color: var(--gold-dark);
+    }
+
+    .toggle-switch svg {
+      width: 24px;
+      height: 24px;
+      fill: currentColor;
+      transition: transform 0.5s ease;
+    }
+
+    /* Small devices */
+    @media (max-width: 500px) {
+      .slider {
+        height: 140px;
+      }
+
+      .slides img {
+        height: 140px;
+      }
+
+      .logo span {
+        font-size: 17px;
+      }
+
+      .menu {
+        width: 160px;
+        right: 10px;
+      }
+
+      .toggle-switch {
+        font-size: 14px;
+        gap: 5px;
+      }
+      .menu a {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 18px;
+      color: var(--menu-text-dark);
+      text-decoration: none;
+      border-bottom: 1px solid #333;
+      transition: background 0.3s ease, color 0.5s;
+      }
+      
+      .menu a:hover {
+      background: #33335a;
+      }
+      
+      .menu-icon {
+      width: 20px;
+      height: 20px;
+      object-fit: contain;
+      filter: drop-shadow(0 0 2px var(--gold));
+      }
+
+      .toggle-switch svg {
+        width: 20px;
+        height: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo">
+    <img src="https://i.postimg.cc/y65PnwgV/speech-bubble.png" alt="Logo" />
+    <span>Bangla Quiz Hub
+      <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
+      <dotlottie-player src="https://lottie.host/df0c9417-5ae0-4ce5-8dbe-394577955ab9/PIUvuDxZED.lottie" background="transparent" speed="1" style="width: 60px; height: 60px" loop autoplay></dotlottie-player>
+    </span>
+  </div>
+  <div style="display: flex; align-items:center; gap: 15px;">
+    <div class="toggle-switch" id="modeToggle" title="Light / Dark Mode">
+      <svg id="modeIcon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" >
+        <!-- Moon icon initially -->
+        <path d="M21.75 15.56a9 9 0 01-12.3-12.3 7 7 0 0012.3 12.3z"/>
+      </svg>
+      <span id="modeText">Night</span>
+    </div>
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+  </div>
+</header>
+
+<div class="menu" id="dropdownMenu">
+<a href="index.html">
+<img src="https://i.postimg.cc/KjrRPPJH/home.png" alt="Home " class="menu-icon" />
+Home
+</a>
+  <a href="rank.html">
+    <img src="https://i.postimg.cc/hjYvxFDw/ranking.png" alt="হোম আইকন" class="menu-icon" />
+    My Rank 
+  </a>
+  <a href="history.html">
+    <img src="https://i.postimg.cc/251SYkNt/time-management.png" alt="অ্যাপ সার্ভিস আইকন" class="menu-icon" />
+    History
+  </a>
+  <a href="faq.html">
+    <img src="https://i.postimg.cc/Y0rKnf6Q/faq.png" alt="যোগাযোগ আইকন" class="menu-icon" />
+    FAQ
+  </a>
+  <a href="dev.html">
+  <img src="https://i.postimg.cc/hvcz2wZM/development.png" alt="যোগাযোগ আইকন" class="menu-icon" />
+  Contact Dev
+  </a>
+</div>
+
+<script>
+  const modeToggle = document.getElementById("modeToggle");
+  const modeIcon = document.getElementById("modeIcon");
+  const modeText = document.getElementById("modeText");
+  const body = document.body;
+
+  // SVG icons for sun and moon
+  const sunIcon = '<path d="M12 18a6 6 0 100-12 6 6 0 000 12zm0-14v-2m0 18v-2m8-8h-2m-12 0H2m15.364-7.364l-1.414 1.414M6.05 17.95l-1.414 1.414m12.728 0l-1.414-1.414M6.05 6.05L4.636 4.636"/>';
+  const moonIcon = '<path d="M21.75 15.56a9 9 0 01-12.3-12.3 7 7 0 0012.3 12.3z"/>';
+
+  function setMode(dark) {
+    if(dark) {
+      body.classList.remove('light-mode');
+      modeIcon.innerHTML = moonIcon;
+      modeText.textContent = 'Night';
+    } else {
+      body.classList.add('light-mode');
+      modeIcon.innerHTML = sunIcon;
+      modeText.textContent = 'Day';
+    }
+  }
+
+  // Initial mode - default dark
+  let darkMode = true;
+  setMode(darkMode);
+
+  modeToggle.addEventListener('click', () => {
+    darkMode = !darkMode;
+    setMode(darkMode);
+  });
+
+  // Menu toggle
+  function toggleMenu() {
+    const menu = document.getElementById("dropdownMenu");
+    menu.style.display = menu.style.display === "flex" ? "none" : "flex";
+  }
+
+  window.addEventListener("click", function(e) {
+    const menu = document.getElementById("dropdownMenu");
+    const toggle = document.querySelector(".menu-toggle");
+    if (!menu.contains(e.target) && !toggle.contains(e.target)) {
+      menu.style.display = "none";
+    }
+  });
+</script>
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Swygen FAQ</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <style>
+    /* Isolated container to avoid conflict */
+    .swygen-faq-wrapper {
+      font-family: 'Poppins', sans-serif;
+      max-width: 800px;
+      margin: 50px auto;
+      padding: 20px;
+      background: #0d0d0d;
+      border-radius: 20px;
+      box-shadow: 0 0 30px #000;
+      color: #fff;
+      z-index: 999;
+      position: relative;
+    }
+
+    .swygen-faq-title {
+      font-size: 30px;
+      font-weight: 600;
+      text-align: center;
+      margin-bottom: 30px;
+      background: linear-gradient(to right, #ffcc00, #ff6600);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: glow 2s ease-in-out infinite alternate;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    @keyframes glow {
+      0% { text-shadow: 0 0 10px #ffaa00; }
+      100% { text-shadow: 0 0 25px #ff9900; }
+    }
+
+    .swygen-faq-item {
+      background: #1a1a1a;
+      border: 1px solid #333;
+      border-radius: 12px;
+      margin-bottom: 16px;
+      overflow: hidden;
+      box-shadow: 0 0 15px #00000080;
+    }
+
+    .swygen-faq-question {
+      padding: 16px 20px;
+      cursor: pointer;
+      font-size: 17px;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .swygen-faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      padding: 0 20px;
+      transition: max-height 0.4s ease;
+      font-size: 15px;
+      color: #ddd;
+    }
+
+    .swygen-faq-item.active .swygen-faq-answer {
+      padding: 15px 20px 20px;
+      max-height: 300px;
+    }
+
+    .swygen-support-buttons {
+      margin-top: 30px;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .swygen-support-buttons a {
+      text-decoration: none;
+      background: #25d366;
+      color: white;
+      padding: 10px 18px;
+      border-radius: 30px;
+      font-weight: 500;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: 0.3s;
+      box-shadow: 0 0 10px #25d36670;
+    }
+
+    .swygen-support-buttons a.telegram {
+      background: #0088cc;
+      box-shadow: 0 0 10px #0088cc70;
+    }
+
+    .swygen-support-buttons a:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 0 15px #fff3;
+    }
+
+    .swygen-support-buttons .material-icons {
+      font-size: 18px;
+    }
+
+    @media (max-width: 600px) {
+      .swygen-faq-title {
+        font-size: 24px;
+      }
+      .swygen-support-buttons {
+        flex-direction: column;
+        gap: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="swygen-faq-wrapper">
+    <div class="swygen-faq-title">
+      <span class="material-icons">quiz</span> প্রায়শই জিজ্ঞাসিত প্রশ্নাবলী
+    </div>
+
+    <div class="swygen-faq-item">
+      <div class="swygen-faq-question">
+        <span class="material-icons">question_answer</span> Swygen কী?
+      </div>
+      <div class="swygen-faq-answer">
+        Swygen একটি প্রিমিয়াম ডিজিটাল সার্ভিস প্ল্যাটফর্ম যা ওয়েবসাইট, অ্যাপ, বট এবং মার্কেটিং সলিউশন প্রদান করে।
+      </div>
+    </div>
+
+    <div class="swygen-faq-item">
+      <div class="swygen-faq-question">
+        <span class="material-icons">attach_money</span> এটি কি ফ্রি সার্ভিস?
+      </div>
+      <div class="swygen-faq-answer">
+        অনেক টুল ও সার্ভিস বিনামূল্যে ব্যবহারযোগ্য, তবে কিছু প্রিমিয়াম ফিচারের জন্য পেমেন্ট প্রযোজ্য।
+      </div>
+    </div>
+
+    <div class="swygen-faq-item">
+      <div class="swygen-faq-question">
+        <span class="material-icons">support_agent</span> কিভাবে যোগাযোগ করবো?
+      </div>
+      <div class="swygen-faq-answer">
+        নিচের WhatsApp বা Telegram বাটন থেকে সরাসরি আমাদের সাথে যোগাযোগ করতে পারেন।
+      </div>
+    </div>
+
+    <div class="swygen-faq-item">
+      <div class="swygen-faq-question">
+        <span class="material-icons">schedule</span> অর্ডার ডেলিভারি কতদিনে হয়?
+      </div>
+      <div class="swygen-faq-answer">
+        সাধারণত ১-৩ কর্মদিবসের মধ্যে ডেলিভারি সম্পন্ন হয়, তবে তা সার্ভিসের জটিলতার উপর নির্ভর করে।
+      </div>
+    </div>
+
+    <!-- Support Buttons -->
+    <div class="swygen-support-buttons">
+      <a href="https://wa.me/message/3CECY4PPRT6TO1" target="_blank">
+        <span class="material-icons">chat</span> WhatsApp Support
+      </a>
+      <a href="https://t.me/swygen" target="_blank" class="telegram">
+        <span class="material-icons">send</span> Telegram Support
+      </a>
+    </div>
+  </div>
+
+  <script>
+    document.querySelectorAll('.swygen-faq-question').forEach(q => {
+      q.addEventListener('click', () => {
+        const item = q.parentElement;
+        item.classList.toggle('active');
+      });
+    });
+  </script>
+
+<style>
+  .swygen-footer {
+    background: transparent;
+    padding: 60px 20px 30px;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    color: #ffffffdd;
+    position: relative;
+    z-index: 99;
+  }
+
+  .swygen-footer h2 {
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 30px;
+    background: linear-gradient(90deg, #FFD700, #FF8C00);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: glowText 2s ease-in-out infinite alternate;
+  }
+
+  @keyframes glowText {
+    0% { text-shadow: 0 0 8px #ffdd00; }
+    100% { text-shadow: 0 0 20px #ffa500; }
+  }
+
+  .swygen-profile-img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 3px solid #ffffff99;
+    margin: 20px auto;
+    object-fit: cover;
+    box-shadow: 0 0 25px #ffd700cc;
+    transition: 0.3s ease;
+  }
+
+  .swygen-profile-img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 35px #ffe100;
+  }
+
+  .footer-bottom {
+    margin-top: 25px;
+    font-size: 18px;
+    color: #cccccc;
+  }
+
+  .footer-bottom a {
+    color: #FFD700;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.3s;
+  }
+
+  .footer-bottom a:hover {
+    color: #ffffff;
+    text-shadow: 0 0 10px #FFD700;
+  }
+
+  .verified-icon {
+    width: 18px;
+    vertical-align: middle;
+    margin-left: 6px;
+  }
+
+  .swygen-socials {
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+    flex-wrap: wrap;
+  }
+
+  .swygen-socials a img {
+    width: 30px;
+    height: 30px;
+    transition: 0.3s;
+    filter: drop-shadow(0 0 5px #FFD700);
+  }
+
+  .swygen-socials a:hover img {
+    transform: scale(1.15);
+    filter: drop-shadow(0 0 12px #ffa500);
+  }
+</style>
+
+<div class="swygen-footer">
+  
+
+  <img src="https://i.postimg.cc/L6pNSJYH/Picsart-25-03-13-18-18-11-773.jpg" alt="Profile Picture" class="swygen-profile-img">
+
+  <div class="footer-bottom">
+    2025 All right resorb | Developer By 
+    <a href="https://swygen.netlify.app/" target="_blank">Swygen</a>
+    <img src="verified-icon.png" class="verified-icon" alt="">
+  </div>
+
+  <div class="swygen-socials">
+    <a href="https://www.facebook.com/Ariful.Rahman.Shaoun"><img src="https://i.postimg.cc/nzx6mkVC/facebook.png" alt="Facebook"></a>
+    <a href="https://t.me/swygen"><img src="https://i.postimg.cc/FzdygQBs/telegram.png" alt="Telegram"></a>
+    <a href="https://wa.me/message/3CECY4PPRT6TO1"><img src="https://i.postimg.cc/fRrzY11k/mobile.png" alt="WhatsApp"></a>
+    <a href="+8801342965008"><img src="https://i.postimg.cc/8PLMKmT1/telephone.png" alt="Phone"></a>
+    <a href="swygenofficial@gmail.com"><img src="https://i.postimg.cc/Hstj8Zp7/email.png" alt="Email"></a>
+  </div>
+</div>
+</body>
+</html>
