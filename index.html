@@ -1379,5 +1379,64 @@ Home
     <a href="swygenofficial@gmail.com"><img src="https://i.postimg.cc/Hstj8Zp7/email.png" alt="Email"></a>
   </div>
 </div>
+  <!-- Live Chat Button -->
+<div id="premiumChatWidget">
+  <a href="cookies.html" target="_blank" id="chatButton">
+    <dotlottie-player
+      src="https://lottie.host/d94f9c57-cbac-44f1-b14b-c448d7d8f67d/U21x7SDuKT.lottie"
+      background="transparent"
+      speed="1"
+      style="width: 48px; height: 48px"
+      loop
+      autoplay
+    ></dotlottie-player>
+  </a>
+</div>
+
+<!-- Lottie Player Script -->
+<script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
+
+<!-- Styles (Isolated, scoped) -->
+<style>
+  #premiumChatWidget {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 9999;
+  }
+
+  #premiumChatWidget #chatButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(circle at top left, #292929, #000000);
+    padding: 12px;
+    border-radius: 50%;
+    box-shadow: 0 4px 20px rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  #premiumChatWidget #chatButton:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.3);
+  }
+
+  #premiumChatWidget dotlottie-player {
+    width: 48px;
+    height: 48px;
+  }
+
+  /* Responsive on small devices */
+  @media (max-width: 500px) {
+    #premiumChatWidget #chatButton {
+      padding: 10px;
+    }
+
+    #premiumChatWidget dotlottie-player {
+      width: 40px;
+      height: 40px;
+    }
+  }
+</style>
 </body>
 </html>
