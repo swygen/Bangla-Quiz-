@@ -1438,5 +1438,90 @@ Home
     }
   }
 </style>
+  <!-- Install App Banner -->
+<div id="installAppBanner">
+  <img src="https://i.postimg.cc/fWt5zNWb/20250518-220859.png" alt="App Logo" />
+  <div class="app-info">
+    <h4>Bangla Quiz Hub</h4>
+    <button id="installButton">Install App</button>
+  </div>
+</div>
+
+<style>
+  #installAppBanner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #000000e6;
+    color: white;
+    z-index: 999999;
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+  }
+
+  #installAppBanner img {
+    height: 40px;
+    width: 40px;
+    margin-right: 10px;
+  }
+
+  .app-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  #installButton {
+    background: #ffffff10;
+    color: #fff;
+    border: 1px solid #ffffff30;
+    padding: 6px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
+  #installButton:hover {
+    background: #ffffff20;
+  }
+
+  @media (max-width: 500px) {
+    #installAppBanner {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+</style>
+
+<script>
+  let deferredPrompt;
+  const installBanner = document.getElementById('installAppBanner');
+  const installButton = document.getElementById('installButton');
+
+  // Hide by default
+  installBanner.style.display = 'none';
+
+  window.addEventListener('beforeinstallprompt', (e) => {
+    e.preventDefault();
+    deferredPrompt = e;
+    installBanner.style.display = 'flex';
+  });
+
+  installButton.addEventListener('click', async () => {
+    if (deferredPrompt) {
+      deferredPrompt.prompt();
+      const { outcome } = await deferredPrompt.userChoice;
+      if (outcome === 'accepted') {
+        console.log('App installed');
+        installBanner.style.display = 'none';
+      }
+      deferredPrompt = null;
+    }
+  });
+</script>
 </body>
 </html>
