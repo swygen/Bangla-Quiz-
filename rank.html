@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Premium Site with Light/Dark Mode</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700;900&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --gold: #ffd700;
+      --gold-dark: #cca300;
+      --bg-dark: #0e0e1a;
+      --bg-light: #f9f9f9;
+      --text-dark: #fff;
+      --text-light: #222;
+      --header-bg-dark: rgba(10,10,20,0.98);
+      --header-bg-light: rgba(255,255,255,0.95);
+      --menu-bg-dark: #22223f;
+      --menu-bg-light: #eee;
+      --menu-text-dark: #fffacd;
+      --menu-text-light: #222;
+      --link-bg-dark: linear-gradient(to right, #ffd700, #ffcc00);
+      --link-bg-light: linear-gradient(to right, #f0c000, #d4a200);
+    }
+
+    /* Dark mode default */
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: var(--bg-dark);
+      color: var(--text-dark);
+      overflow-x: hidden;
+      transition: background 0.5s, color 0.5s;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: var(--header-bg-dark);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 20px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 0 12px var(--gold);
+      transition: background 0.5s, color 0.5s;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo img {
+      height: 35px;
+      transition: filter 0.5s;
+    }
+
+    .logo span {
+      font-weight: 800;
+      font-size: 20px;
+      display: flex;
+      align-items: center;
+      color: var(--text-dark);
+      transition: color 0.5s;
+    }
+
+    .premium-icon {
+      width: 22px;
+      margin-left: 6px;
+      filter: drop-shadow(0 0 4px var(--gold));
+      transition: filter 0.5s;
+    }
+
+    .menu-toggle {
+      font-size: 30px;
+      cursor: pointer;
+      color: var(--gold);
+      transition: transform 0.3s ease, color 0.5s;
+    }
+
+    .menu-toggle:hover {
+      transform: scale(1.1);
+    }
+
+    .menu {
+      position: absolute;
+      top: 75px;
+      right: 30px;
+      background: var(--menu-bg-dark);
+      border-radius: 12px;
+      display: none;
+      flex-direction: column;
+      width: 180px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.7);
+      z-index: 1100;
+      transition: background 0.5s, color 0.5s;
+    }
+
+    .menu a {
+      padding: 14px 18px;
+      color: var(--menu-text-dark);
+      text-decoration: none;
+      border-bottom: 1px solid #333;
+      transition: background 0.3s ease, color 0.5s;
+    }
+
+    .menu a:hover {
+      background: #33335a;
+    }
+
+    .slider {
+      width: 100%;
+      max-width: 600px;
+      height: 180px;
+      margin: 20px auto;
+      border-radius: 14px;
+      overflow: hidden;
+      position: relative;
+      box-shadow: 0 0 15px var(--gold);
+      transition: box-shadow 0.5s;
+    }
+
+    .slides {
+      display: flex;
+      animation: slide 17s infinite ease-in-out;
+    }
+
+    .slides img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      transition: filter 4s;
+    }
+
+    @keyframes slide {
+      0% { transform: translateX(0%); }
+      33% { transform: translateX(-300%); }
+      66% { transform: translateX(-200%); }
+      100% { transform: translateX(0%); }
+    }
+
+    .link-boxes {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      padding: 25px 15px;
+    }
+
+    .link-boxes a {
+      background: var(--link-bg-dark);
+      color: #111;
+      padding: 10px 20px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 14px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+      transition: all 0.3s ease;
+    }
+
+    .link-boxes a:hover {
+      transform: scale(1.06);
+      background: linear-gradient(to right, #fff400, #ffc107);
+    }
+
+    /* Light mode styles */
+    body.light-mode {
+      background: var(--bg-light);
+      color: var(--text-light);
+    }
+
+    body.light-mode header {
+      background: var(--header-bg-light);
+      box-shadow: 0 0 12px var(--gold-dark);
+      color: var(--text-light);
+    }
+
+    body.light-mode .logo span {
+      color: var(--text-light);
+    }
+
+    body.light-mode .premium-icon {
+      filter: drop-shadow(0 0 4px var(--gold-dark));
+    }
+
+    body.light-mode .menu-toggle {
+      color: var(--gold-dark);
+    }
+
+    body.light-mode .menu {
+      background: var(--menu-bg-light);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    }
+
+    body.light-mode .menu a {
+      color: var(--menu-text-light);
+      border-bottom: 1px solid #ccc;
+    }
+
+    body.light-mode .menu a:hover {
+      background: #ddd;
+      color: #111;
+    }
+
+    body.light-mode .slider {
+      box-shadow: 0 0 15px var(--gold-dark);
+    }
+
+    body.light-mode .slides img {
+      filter: brightness(0.9);
+    }
+
+    body.light-mode .link-boxes a {
+      background: var(--link-bg-light);
+      color: #111;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    }
+
+    /* Light/Dark toggle button */
+    .toggle-switch {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      user-select: none;
+      color: var(--gold);
+      font-weight: 600;
+      font-size: 16px;
+      transition: color 0.5s;
+    }
+
+    body.light-mode .toggle-switch {
+      color: var(--gold-dark);
+    }
+
+    .toggle-switch svg {
+      width: 24px;
+      height: 24px;
+      fill: currentColor;
+      transition: transform 0.5s ease;
+    }
+
+    /* Small devices */
+    @media (max-width: 500px) {
+      .slider {
+        height: 140px;
+      }
+
+      .slides img {
+        height: 140px;
+      }
+
+      .logo span {
+        font-size: 17px;
+      }
+
+      .menu {
+        width: 160px;
+        right: 10px;
+      }
+
+      .toggle-switch {
+        font-size: 14px;
+        gap: 5px;
+      }
+      .menu a {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 18px;
+      color: var(--menu-text-dark);
+      text-decoration: none;
+      border-bottom: 1px solid #333;
+      transition: background 0.3s ease, color 0.5s;
+      }
+      
+      .menu a:hover {
+      background: #33335a;
+      }
+      
+      .menu-icon {
+      width: 20px;
+      height: 20px;
+      object-fit: contain;
+      filter: drop-shadow(0 0 2px var(--gold));
+      }
+
+      .toggle-switch svg {
+        width: 20px;
+        height: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo">
+    <img src="https://i.postimg.cc/y65PnwgV/speech-bubble.png" alt="Logo" />
+    <span>Bangla Quiz Hub
+      <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
+      <dotlottie-player src="https://lottie.host/df0c9417-5ae0-4ce5-8dbe-394577955ab9/PIUvuDxZED.lottie" background="transparent" speed="1" style="width: 60px; height: 60px" loop autoplay></dotlottie-player>
+    </span>
+  </div>
+  <div style="display: flex; align-items:center; gap: 15px;">
+    <div class="toggle-switch" id="modeToggle" title="Light / Dark Mode">
+      <svg id="modeIcon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" >
+        <!-- Moon icon initially -->
+        <path d="M21.75 15.56a9 9 0 01-12.3-12.3 7 7 0 0012.3 12.3z"/>
+      </svg>
+      <span id="modeText">Night</span>
+    </div>
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+  </div>
+</header>
+
+<div class="menu" id="dropdownMenu">
+<a href="index.html">
+<img src="https://i.postimg.cc/KjrRPPJH/home.png" alt="Home " class="menu-icon" />
+Home
+</a>
+  <a href="rank.html">
+    <img src="https://i.postimg.cc/hjYvxFDw/ranking.png" alt="হোম আইকন" class="menu-icon" />
+    My Rank 
+  </a>
+  <a href="history.html">
+    <img src="https://i.postimg.cc/251SYkNt/time-management.png" alt="অ্যাপ সার্ভিস আইকন" class="menu-icon" />
+    History
+  </a>
+  <a href="faq.html">
+    <img src="https://i.postimg.cc/Y0rKnf6Q/faq.png" alt="যোগাযোগ আইকন" class="menu-icon" />
+    FAQ
+  </a>
+  <a href="dev.html">
+  <img src="https://i.postimg.cc/hvcz2wZM/development.png" alt="যোগাযোগ আইকন" class="menu-icon" />
+  Contact Dev
+  </a>
+</div>
+
+<script>
+  const modeToggle = document.getElementById("modeToggle");
+  const modeIcon = document.getElementById("modeIcon");
+  const modeText = document.getElementById("modeText");
+  const body = document.body;
+
+  // SVG icons for sun and moon
+  const sunIcon = '<path d="M12 18a6 6 0 100-12 6 6 0 000 12zm0-14v-2m0 18v-2m8-8h-2m-12 0H2m15.364-7.364l-1.414 1.414M6.05 17.95l-1.414 1.414m12.728 0l-1.414-1.414M6.05 6.05L4.636 4.636"/>';
+  const moonIcon = '<path d="M21.75 15.56a9 9 0 01-12.3-12.3 7 7 0 0012.3 12.3z"/>';
+
+  function setMode(dark) {
+    if(dark) {
+      body.classList.remove('light-mode');
+      modeIcon.innerHTML = moonIcon;
+      modeText.textContent = 'Night';
+    } else {
+      body.classList.add('light-mode');
+      modeIcon.innerHTML = sunIcon;
+      modeText.textContent = 'Day';
+    }
+  }
+
+  // Initial mode - default dark
+  let darkMode = true;
+  setMode(darkMode);
+
+  modeToggle.addEventListener('click', () => {
+    darkMode = !darkMode;
+    setMode(darkMode);
+  });
+
+  // Menu toggle
+  function toggleMenu() {
+    const menu = document.getElementById("dropdownMenu");
+    menu.style.display = menu.style.display === "flex" ? "none" : "flex";
+  }
+
+  window.addEventListener("click", function(e) {
+    const menu = document.getElementById("dropdownMenu");
+    const toggle = document.querySelector(".menu-toggle");
+    if (!menu.contains(e.target) && !toggle.contains(e.target)) {
+      menu.style.display = "none";
+    }
+  });
+</script>
+<div class="premium-image-container">
+  <img src="https://i.postimg.cc/50BwF9HB/20250520-124915.png" alt="Premium Image" class="premium-glow-img" />
+</div>
+
+<style>
+/* Scoped styles */
+.premium-image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background: transparent;
+  z-index: 10;
+}
+
+.premium-glow-img {
+  max-width: 90%;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0 0 30px rgba(0, 255, 255, 0.6), 
+              0 0 60px rgba(0, 255, 255, 0.4), 
+              0 0 100px rgba(0, 255, 255, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.premium-glow-img:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 40px rgba(0, 255, 255, 0.8), 
+              0 0 80px rgba(0, 255, 255, 0.6), 
+              0 0 120px rgba(0, 255, 255, 0.3);
+}
+
+/* Mobile friendly */
+@media (max-width: 600px) {
+  .premium-glow-img {
+    max-width: 100%;
+    border-radius: 15px;
+  }
+}
+</style>
+<!-- Firebase SDK -->
+<script type="module">
+  // Import Firebase libraries
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-app.js";
+  import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-auth.js";
+
+  // Your Firebase configuration (replace with your own)
+  const firebaseConfig = {
+  apiKey: "AIzaSyCl1854qJoh3hDbYTEwpILtdV3BC6xxYmE",
+  authDomain: "bangla-quiz-hub-ffb2a.firebaseapp.com",
+  projectId: "bangla-quiz-hub-ffb2a",
+  storageBucket: "bangla-quiz-hub-ffb2a.firebasestorage.app",
+  messagingSenderId: "798921821758",
+  appId: "1:798921821758:web:75df4b29b4e16341e5cb6f",
+  measurementId: "G-WX2PHQQFKL"
+};
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const auth = getAuth(app);
+
+  // Check authentication status
+  onAuthStateChanged(auth, (user) => {
+    if (!user) {
+      // Not logged in, redirect to signup page
+      window.location.href = "signup.html";
+    }
+    // Logged in: do nothing
+  });
+</script>
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>My Rank</title>
+
+  <!-- Firebase CDN -->
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+
+  <style>
+    /* Container specific to this page */
+    #myrank-container {
+      position: relative;
+      background: transparent;
+      color: #fff;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      max-width: 400px;
+      margin: 50px auto;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.15);
+      text-align: center;
+      user-select: none;
+      z-index: 9999;
+    }
+
+    #myrank-container h2 {
+      margin-bottom: 20px;
+      font-weight: 700;
+      font-size: 1.8rem;
+      text-shadow: 0 0 5px rgba(255, 255, 255, 0.6);
+    }
+
+    #rank-value {
+      font-size: 3rem;
+      font-weight: 900;
+      color: #00ffea;
+      text-shadow: 0 0 10px #00ffea;
+      margin-bottom: 15px;
+    }
+
+    #status-message {
+      font-size: 1rem;
+      color: #ccc;
+      margin-top: 10px;
+      min-height: 24px;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="myrank-container" aria-live="polite" aria-atomic="true">
+    <h2>আমার র‍্যাংক</h2>
+    <div id="rank-value">লোড হচ্ছে...</div>
+    <div id="status-message"></div>
+  </div>
+
+  <script>
+    // Firebase configuration - এখানে তোমার নিজস্ব Firebase config বসাও
+    const firebaseConfig = {
+  apiKey: "AIzaSyCl1854qJoh3hDbYTEwpILtdV3BC6xxYmE",
+  authDomain: "bangla-quiz-hub-ffb2a.firebaseapp.com",
+  projectId: "bangla-quiz-hub-ffb2a",
+  storageBucket: "bangla-quiz-hub-ffb2a.firebasestorage.app",
+  messagingSenderId: "798921821758",
+  appId: "1:798921821758:web:75df4b29b4e16341e5cb6f",
+  measurementId: "G-WX2PHQQFKL"
+};
+
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    const auth = firebase.auth();
+    const db = firebase.firestore();
+
+    const rankValueEl = document.getElementById('rank-value');
+    const statusMessageEl = document.getElementById('status-message');
+
+    // ইউজার লগইন স্টেট চেক এবং ডেটা ফেচ
+    auth.onAuthStateChanged(user => {
+      if (user) {
+        // ইউজার লগইন অবস্থায়, UID নিয়ে ডাটাবেস থেকে র‍্যাংক লোড করবো
+        const uid = user.uid;
+        db.collection('users').doc(uid).get()
+          .then(doc => {
+            if (doc.exists) {
+              const data = doc.data();
+              if (data.rank !== undefined) {
+                rankValueEl.textContent = data.rank;
+                statusMessageEl.textContent = "আপনার র‍্যাংক সফলভাবে লোড হয়েছে।";
+              } else {
+                rankValueEl.textContent = "ডেটা পাওয়া যায়নি";
+                statusMessageEl.textContent = "আপনার র‍্যাংকের তথ্য পাওয়া যায়নি।";
+              }
+            } else {
+              rankValueEl.textContent = "র‍্যাংক ডেটা পাওয়া যায়নি";
+              statusMessageEl.textContent = "ডেটাবেসে আপনার তথ্য নেই।";
+            }
+          })
+          .catch(error => {
+            rankValueEl.textContent = "লোডিং সমস্যা";
+            statusMessageEl.textContent = "ত্রুটি: " + error.message;
+          });
+      } else {
+        rankValueEl.textContent = "অনুগ্রহ করে লগইন করুন";
+        statusMessageEl.textContent = "র‍্যাংক দেখতে লগইন প্রয়োজন।";
+      }
+    });
+  </script>
+</body>
+</html>
+
+<style>
+  .swygen-footer {
+    background: transparent;
+    padding: 60px 20px 30px;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    color: #ffffffdd;
+    position: relative;
+    z-index: 99;
+  }
+
+  .swygen-footer h2 {
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 30px;
+    background: linear-gradient(90deg, #FFD700, #FF8C00);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: glowText 2s ease-in-out infinite alternate;
+  }
+
+  @keyframes glowText {
+    0% { text-shadow: 0 0 8px #ffdd00; }
+    100% { text-shadow: 0 0 20px #ffa500; }
+  }
+
+  .swygen-profile-img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 3px solid #ffffff99;
+    margin: 20px auto;
+    object-fit: cover;
+    box-shadow: 0 0 25px #ffd700cc;
+    transition: 0.3s ease;
+  }
+
+  .swygen-profile-img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 35px #ffe100;
+  }
+
+  .footer-bottom {
+    margin-top: 25px;
+    font-size: 18px;
+    color: #cccccc;
+  }
+
+  .footer-bottom a {
+    color: #FFD700;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.3s;
+  }
+
+  .footer-bottom a:hover {
+    color: #ffffff;
+    text-shadow: 0 0 10px #FFD700;
+  }
+
+  .verified-icon {
+    width: 18px;
+    vertical-align: middle;
+    margin-left: 6px;
+  }
+
+  .swygen-socials {
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+    flex-wrap: wrap;
+  }
+
+  .swygen-socials a img {
+    width: 30px;
+    height: 30px;
+    transition: 0.3s;
+    filter: drop-shadow(0 0 5px #FFD700);
+  }
+
+  .swygen-socials a:hover img {
+    transform: scale(1.15);
+    filter: drop-shadow(0 0 12px #ffa500);
+  }
+</style>
+
+<div class="swygen-footer">
+  <h2>
+    <img src="" alt="" style="width: 100px; vertical-align: middle; margin-right: 6px;">
+    This service is open and free for everyone from Swygen Official. I hope it will benefit many people.
+  </h2>
+
+  <img src="https://i.postimg.cc/L6pNSJYH/Picsart-25-03-13-18-18-11-773.jpg" alt="Profile Picture" class="swygen-profile-img">
+
+  <div class="footer-bottom">
+    2025 All right resorb | Developer By 
+    <a href="https://swygen.netlify.app/" target="_blank">Swygen</a>
+    <img src="verified-icon.png" class="verified-icon" alt="">
+  </div>
+
+  <div class="swygen-socials">
+    <a href="https://www.facebook.com/Ariful.Rahman.Shaoun"><img src="https://i.postimg.cc/nzx6mkVC/facebook.png" alt="Facebook"></a>
+    <a href="https://t.me/swygen"><img src="https://i.postimg.cc/FzdygQBs/telegram.png" alt="Telegram"></a>
+    <a href="https://wa.me/message/3CECY4PPRT6TO1"><img src="https://i.postimg.cc/fRrzY11k/mobile.png" alt="WhatsApp"></a>
+    <a href="+8801342965008"><img src="https://i.postimg.cc/8PLMKmT1/telephone.png" alt="Phone"></a>
+    <a href="swygenofficial@gmail.com"><img src="https://i.postimg.cc/Hstj8Zp7/email.png" alt="Email"></a>
+  </div>
+</div>
+</body>
+</html>
