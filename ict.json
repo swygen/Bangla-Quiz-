@@ -1,0 +1,602 @@
+[
+  {
+    "question": "কম্পিউটারের মস্তিষ্ক হিসেবে পরিচিত অংশ কোনটি?",
+    "options": [
+      "RAM",
+      "CPU",
+      "Hard Disk",
+      "Motherboard"
+    ],
+    "answer": "CPU"
+  },
+  {
+    "question": "HTML এর পূর্ণরূপ কী?",
+    "options": [
+      "Hyper Text Markup Language",
+      "High Text Makeup Language",
+      "Hyperlink Text Markup Language",
+      "Hyper Tool Multi Language"
+    ],
+    "answer": "Hyper Text Markup Language"
+  },
+  {
+    "question": "কোনটি একটি অপারেটিং সিস্টেম নয়?",
+    "options": [
+      "Windows",
+      "Linux",
+      "Microsoft Word",
+      "macOS"
+    ],
+    "answer": "Microsoft Word"
+  },
+  {
+    "question": "ইন্টারনেট ঠিকানাকে কী বলা হয়?",
+    "options": [
+      "IP Address",
+      "URL",
+      "HTTP",
+      "FTP"
+    ],
+    "answer": "URL"
+  },
+  {
+    "question": "কোন প্রোগ্রামিং ভাষা ওয়েবসাইট ডিজাইনের জন্য ব্যবহৃত হয়?",
+    "options": [
+      "Python",
+      "JavaScript",
+      "C++",
+      "Assembly"
+    ],
+    "answer": "JavaScript"
+  },
+  {
+    "question": "ক্লাউড কম্পিউটিং বলতে কী বোঝায়?",
+    "options": [
+      "স্থানীয় কম্পিউটার ব্যবহার",
+      "দূরবর্তী সার্ভার থেকে ডাটা ও সফটওয়্যার ব্যবহারের প্রক্রিয়া",
+      "কম্পিউটার হার্ডওয়্যার বিক্রি",
+      "নেটওয়ার্ক কেবল ব্যবহার"
+    ],
+    "answer": "দূরবর্তী সার্ভার থেকে ডাটা ও সফটওয়্যার ব্যবহারের প্রক্রিয়া"
+  },
+  {
+    "question": "কোনটি ডেটাবেস ম্যানেজমেন্ট সিস্টেম (DBMS)?",
+    "options": [
+      "Microsoft Excel",
+      "MySQL",
+      "Photoshop",
+      "Windows Explorer"
+    ],
+    "answer": "MySQL"
+  },
+  {
+    "question": "কী বোর্ডে ‘Ctrl + C’ শর্টকাট কী দ্বারা কী করা হয়?",
+    "options": [
+      "কপি",
+      "পেস্ট",
+      "কাট",
+      "আনডু"
+    ],
+    "answer": "কপি"
+  },
+  {
+    "question": "কোনটি একটি সফটওয়্যার প্রকল্প পরিচালনার সরঞ্জাম?",
+    "options": [
+      "GitHub",
+      "YouTube",
+      "Google Maps",
+      "Facebook"
+    ],
+    "answer": "GitHub"
+  },
+  {
+    "question": "IPv4 ঠিকানা কত বিটের হয়?",
+    "options": [
+      "32 বিট",
+      "64 বিট",
+      "128 বিট",
+      "16 বিট"
+    ],
+    "answer": "32 বিট"
+  },
+  {
+    "question": "কম্পিউটারে বাইনারি সংখ্যাব্যবস্থা কী ভিত্তি করে কাজ করে?",
+    "options": [
+      "0 ও 1",
+      "1 ও 2",
+      "0 ও 2",
+      "1 ও 3"
+    ],
+    "answer": "0 ও 1"
+  },
+  {
+    "question": "ওয়াই-ফাই প্রযুক্তি কী ধরণের সংযোগ প্রদান করে?",
+    "options": [
+      "তারযুক্ত",
+      "বেতার",
+      "সেলুলার",
+      "সেটেলাইট"
+    ],
+    "answer": "বেতার"
+  },
+  {
+    "question": "ডেটা এনক্রিপশন কী জন্য ব্যবহৃত হয়?",
+    "options": [
+      "দ্রুত ডেটা ট্রান্সফার করার জন্য",
+      "ডেটা সুরক্ষিত রাখতে",
+      "ডেটা মুছে ফেলার জন্য",
+      "ডেটা কম্প্রেস করার জন্য"
+    ],
+    "answer": "ডেটা সুরক্ষিত রাখতে"
+  },
+  {
+    "question": "কোনটি একটি ওপেন সোর্স অপারেটিং সিস্টেম?",
+    "options": [
+      "Windows 10",
+      "Linux",
+      "macOS",
+      "iOS"
+    ],
+    "answer": "Linux"
+  },
+  {
+    "question": "‘URL’ এর মধ্যে ‘HTTP’ এর অর্থ কী?",
+    "options": [
+      "Hyper Text Transfer Protocol",
+      "Hyperlink Transfer Protocol",
+      "Hyper Tool Text Protocol",
+      "High Text Transfer Protocol"
+    ],
+    "answer": "Hyper Text Transfer Protocol"
+  },
+  {
+  "question": "কম্পিউটারে ‘Cache Memory’ এর প্রধান কাজ কী?",
+  "options": [
+  "ডেটা সংরক্ষণ করা",
+  "দ্রুততর ডেটা অ্যাক্সেস প্রদান করা",
+  "ডেটা এনক্রিপশন করা",
+  "ডেটা ট্রান্সমিশন করা"
+  ],
+  "answer": "দ্রুততর ডেটা অ্যাক্সেস প্রদান করা"
+  },
+  {
+  "question": "‘Machine Learning’ এর মূল ভিত্তি কী ধরনের ডেটা ব্যবহার?",
+  "options": [
+  "স্ট্রাকচার্ড ডেটা",
+  "অনস্ট্রাকচার্ড ডেটা",
+  "উভয়",
+  "কোনোটিই নয়"
+  ],
+  "answer": "উভয়"
+  },
+  {
+  "question": "‘DNS’ এর কাজ কী?",
+  "options": [
+  "ডোমেইন নামকে আইপি ঠিকানায় রূপান্তর করা",
+  "ওয়েব পেজ হোস্টিং করা",
+  "ডেটা এনক্রিপশন করা",
+  "ইমেইল সার্ভার পরিচালনা করা"
+  ],
+  "answer": "ডোমেইন নামকে আইপি ঠিকানায় রূপান্তর করা"
+  },
+  {
+  "question": "‘Bit’ এবং ‘Byte’ এর মধ্যে সম্পর্ক কী?",
+  "options": [
+  "1 Byte = 4 Bits",
+  "1 Byte = 8 Bits",
+  "1 Bit = 8 Bytes",
+  "1 Bit = 4 Bytes"
+  ],
+  "answer": "1 Byte = 8 Bits"
+  },
+  {
+  "question": "কোন প্রোগ্রামিং ভাষাটি ‘Object Oriented Programming’ (OOP) সমর্থন করে না?",
+  "options": [
+  "Java",
+  "Python",
+  "C",
+  "C++"
+  ],
+  "answer": "C"
+  },
+  {
+  "question": "‘Firewall’ এর প্রধান কাজ কী?",
+  "options": [
+  "কম্পিউটার ভাইরাস নির্মাণ",
+  "নেটওয়ার্ক নিরাপত্তা রক্ষা",
+  "ডেটা ব্যাকআপ রাখা",
+  "ওয়েবসাইট ডেভেলপমেন্ট"
+  ],
+  "answer": "নেটওয়ার্ক নিরাপত্তা রক্ষা"
+  },
+  {
+  "question": "‘HTTP’ এর বিকল্প HTTPS কেন ব্যবহৃত হয়?",
+  "options": [
+  "দ্রুত ইন্টারনেট ব্রাউজিং জন্য",
+  "ডেটা এনক্রিপ্টেড ট্রান্সমিশনের জন্য",
+  "বেশি সার্ভার সাপোর্টের জন্য",
+  "সার্চ ইঞ্জিনের উন্নতির জন্য"
+  ],
+  "answer": "ডেটা এনক্রিপ্টেড ট্রান্সমিশনের জন্য"
+  },
+  {
+  "question": "‘IP Address’ এর  IPv6 কত বিটের?",
+  "options": [
+  "32 বিট",
+  "64 বিট",
+  "128 বিট",
+  "256 বিট"
+  ],
+  "answer": "128 বিট"
+  },
+  {
+  "question": "‘Operating System’ কোন কাজ করে না?",
+  "options": [
+  "হার্ডওয়্যার নিয়ন্ত্রণ",
+  "প্রোগ্রাম ম্যানেজমেন্ট",
+  "ইন্টারনেট ব্রাউজিং",
+  "ফাইল সিস্টেম পরিচালনা"
+  ],
+  "answer": "ইন্টারনেট ব্রাউজিং"
+  },
+  {
+  "question": "‘Algorithm’ বলতে কী বোঝায়?",
+  "options": [
+  "একটি সমস্যা সমাধানের ধাপসমূহের সজ্জিত ধারা",
+  "একটি সফটওয়্যার প্রোগ্রাম",
+  "কম্পিউটারের মেমোরি",
+  "ইন্টারনেটের গতি"
+  ],
+  "answer": "একটি সমস্যা সমাধানের ধাপসমূহের সজ্জিত ধারা"
+  },
+  {
+  "question": "‘Phishing’ এর মাধ্যমে কোন ধরনের হামলা করা হয়?",
+  "options": [
+  "কম্পিউটার ভাইরাস ছড়ানো",
+  "ব্যক্তিগত তথ্য চুরি",
+  "ডেটা এনক্রিপশন",
+  "সার্ভার হ্যাকিং"
+  ],
+  "answer": "ব্যক্তিগত তথ্য চুরি"
+  },
+  {
+  "question": "কোনটি ‘Programming Paradigm’ নয়?",
+  "options": [
+  "Procedural Programming",
+  "Functional Programming",
+  "Logical Programming",
+  "Physical Programming"
+  ],
+  "answer": "Physical Programming"
+  },
+  {
+  "question": "‘Cloud Storage’ এর সুবিধা কোনটি নয়?",
+  "options": [
+  "যেকোন স্থান থেকে ডেটা অ্যাক্সেস",
+  "স্বয়ংক্রিয় ডেটা ব্যাকআপ",
+  "ফিজিক্যাল ডিভাইসের উপর নির্ভরতা",
+  "ডেটা শেয়ারিং সুবিধা"
+  ],
+  "answer": "ফিজিক্যাল ডিভাইসের উপর নির্ভরতা"
+  },
+  {
+  "question": "কোনটি ‘Database Query Language’?",
+  "options": [
+  "HTML",
+  "SQL",
+  "CSS",
+  "JavaScript"
+  ],
+  "answer": "SQL"
+  },
+  {
+  "question": "কোনটি ‘Artificial Intelligence’ এর একটি শাখা নয়?",
+  "options": [
+  "Machine Learning",
+  "Natural Language Processing",
+  "Quantum Computing",
+  "Computer Vision"
+  ],
+  "answer": "Quantum Computing"
+  },
+  {
+  "question": "কম্পিউটারের CPU এর কোন অংশটি ইনস্ট্রাকশন এবং ডেটা প্রসেসিং করে?",
+  "options": [
+  "ALU (Arithmetic Logic Unit)",
+  "Cache Memory",
+  "Control Unit",
+  "Register"
+  ],
+  "answer": "ALU (Arithmetic Logic Unit)"
+  },
+  {
+  "question": "‘Big Data’ এর মূল বৈশিষ্ট্য কোনটি নয়?",
+  "options": [
+  "Volume",
+  "Velocity",
+  "Variety",
+  "Validity"
+  ],
+  "answer": "Validity"
+  },
+  {
+  "question": "কোনটি ‘Blockchain’ এর প্রধান বৈশিষ্ট্য নয়?",
+  "options": [
+  "Transparency",
+  "Decentralization",
+  "Central Authority",
+  "Immutability"
+  ],
+  "answer": "Central Authority"
+  },
+  {
+  "question": "কোন প্রোগ্রামিং ভাষাটি ‘Memory Management’ ম্যানুয়ালি করতে হয়?",
+  "options": [
+  "Python",
+  "Java",
+  "C++",
+  "Ruby"
+  ],
+  "answer": "C++"
+  },
+  {
+  "question": "IPv4 ঠিকানার সর্বোচ্চ সংখ্যা কত?",
+  "options": [
+  "৪৩১ কোটি",
+  "৪২৯ কোটি ৪৬ লাখ ৯৬ হাজার ৭২",
+  "৪৫০ কোটি",
+  "৪০০ কোটি"
+  ],
+  "answer": "৪২৯ কোটি ৪৬ লাখ ৯৬ হাজার ৭২"
+  },
+  {
+  "question": "‘SQL Injection’ একটি ধরনের কোন ধরনের সাইবার আক্রমণ?",
+  "options": [
+  "ডেটা চুরি",
+  "ডেটাবেস ম্যানিপুলেশন",
+  "ফিশিং",
+  "ম্যালওয়্যার আক্রমণ"
+  ],
+  "answer": "ডেটাবেস ম্যানিপুলেশন"
+  },
+  {
+  "question": "‘Operating System’ এর কোন উপাদানটি ইউজার এবং হার্ডওয়্যারের মধ্যে মধ্যস্থতা করে?",
+  "options": [
+  "Kernel",
+  "Shell",
+  "File System",
+  "Device Driver"
+  ],
+  "answer": "Kernel"
+  },
+  {
+  "question": "কোনটি একটি ‘NoSQL’ ডেটাবেস নয়?",
+  "options": [
+  "MongoDB",
+  "Cassandra",
+  "MySQL",
+  "Redis"
+  ],
+  "answer": "MySQL"
+  },
+  {
+  "question": "‘HTML’ এর সম্পূর্ণ রূপ কী?",
+  "options": [
+  "Hyper Text Markup Language",
+  "High Text Markup Language",
+  "Hyper Text Making Language",
+  "Hyperlink Text Mark Language"
+  ],
+  "answer": "Hyper Text Markup Language"
+  },
+  {
+  "question": "‘Compiler’ কী কাজ করে?",
+  "options": [
+  "সোর্স কোডকে মেশিন কোডে অনুবাদ করে",
+  "ডেটা এনক্রিপ্ট করে",
+  "ইনপুট ডিভাইস নিয়ন্ত্রণ করে",
+  "ডেটাবেস পরিচালনা করে"
+  ],
+  "answer": "সোর্স কোডকে মেশিন কোডে অনুবাদ করে"
+  },
+  {
+  "question": "‘DNS Spoofing’ আক্রমণ কী উদ্দেশ্যে হয়?",
+  "options": [
+  "ডেটা এনক্রিপ্ট করা",
+  "ওয়েবসাইটের আইপি বদলে দেওয়া",
+  "কম্পিউটার ভাইরাস ছড়ানো",
+  "ব্যবহারকারীর তথ্য চুরি"
+  ],
+  "answer": "ওয়েবসাইটের আইপি বদলে দেওয়া"
+  },
+  {
+  "question": "কোনটি একটি ‘Programming Paradigm’?",
+  "options": [
+  "Procedural Programming",
+  "Logical Programming",
+  "Functional Programming",
+  "উপরের সবগুলোই"
+  ],
+  "answer": "উপরের সবগুলোই"
+  },
+  {
+  "question": "‘Artificial Intelligence’ এর ক্ষেত্রে ‘Supervised Learning’ মানে কী?",
+  "options": [
+  "মডেলকে লেবেল করা ডেটা দিয়ে প্রশিক্ষণ দেওয়া",
+  "মডেলকে কোন ডেটা না দিয়ে প্রশিক্ষণ দেওয়া",
+  "মেশিন নিজে থেকেই শেখার প্রক্রিয়া",
+  "ডেটা এনক্রিপশন"
+  ],
+  "answer": "মডেলকে লেবেল করা ডেটা দিয়ে প্রশিক্ষণ দেওয়া"
+  },
+  {
+  "question": "‘Cloud Computing’ এর কোনটি সাধারণ মডেল নয়?",
+  "options": [
+  "IaaS (Infrastructure as a Service)",
+  "PaaS (Platform as a Service)",
+  "SaaS (Software as a Service)",
+  "DaaS (Data as a Software)"
+  ],
+  "answer": "DaaS (Data as a Software)"
+  },
+  {
+  "question": "কোনটি ‘Data Structure’ নয়?",
+  "options": [
+  "Array",
+  "Stack",
+  "Loop",
+  "Queue"
+  ],
+  "answer": "Loop"
+  },
+  {
+  "question": "কোন প্রোটোকল ইন্টারনেটে ডেটা প্যাকেট ট্রান্সমিশনের জন্য সবচেয়ে বেশি ব্যবহৃত হয়?",
+  "options": [
+  "HTTP",
+  "FTP",
+  "TCP/IP",
+  "SMTP"
+  ],
+  "answer": "TCP/IP"
+  },
+  {
+  "question": "‘Phishing Attack’ মূলত কীভাবে কাজ করে?",
+  "options": [
+  "ম্যালওয়্যার ইনস্টল করে",
+  "ব্যবহারকারীর বিশ্বাসযোগ্য ওয়েবসাইটের মতো নকল ওয়েবসাইট তৈরি করে",
+  "ডেটা এনক্রিপ্ট করে",
+  "হ্যাকারের কম্পিউটার নিয়ন্ত্রণ করে"
+  ],
+  "answer": "ব্যবহারকারীর বিশ্বাসযোগ্য ওয়েবসাইটের মতো নকল ওয়েবসাইট তৈরি করে"
+  },
+  {
+  "question": "কোনটি কম্পিউটার হার্ডওয়্যার নয়?",
+  "options": [
+  "RAM",
+  "CPU",
+  "Linux",
+  "Hard Disk"
+  ],
+  "answer": "Linux"
+  },
+  {
+  "question": "IPv6 ঠিকানা কত বিট লম্বা হয়?",
+  "options": [
+  "৩২ বিট",
+  "৬৪ বিট",
+  "১২৮ বিট",
+  "২৫৬ বিট"
+  ],
+  "answer": "১২৮ বিট"
+  },
+  {
+  "question": "কোনটি কম্পিউটারে তথ্য সংরক্ষণের সর্বোচ্চ দ্রুতগামী স্মৃতি?",
+  "options": [
+  "Hard Disk Drive (HDD)",
+  "Solid State Drive (SSD)",
+  "Cache Memory",
+  "RAM"
+  ],
+  "answer": "Cache Memory"
+  },
+  {
+  "question": "কোন প্রোগ্রামিং ভাষাটি ওয়েব ডেভেলপমেন্টের জন্য সবচেয়ে বেশি ব্যবহৃত হয়?",
+  "options": [
+  "Python",
+  "JavaScript",
+  "C++",
+  "Java"
+  ],
+  "answer": "JavaScript"
+  },
+  {
+  "question": "‘VPN’ এর পূর্ণরূপ কী?",
+  "options": [
+  "Virtual Private Network",
+  "Verified Personal Network",
+  "Virtual Public Network",
+  "Verified Private Network"
+  ],
+  "answer": "Virtual Private Network"
+  },
+  {
+  "question": "কম্পিউটারে ডেটা সংরক্ষণের জন্য কোন ডিভাইসটি সর্বাধিক ব্যবহার হয়?",
+  "options": [
+  "RAM",
+  "ROM",
+  "Hard Disk Drive",
+  "CPU"
+  ],
+  "answer": "Hard Disk Drive"
+  },
+  {
+  "question": "‘Firewall’ এর কাজ কী?",
+  "options": [
+  "কম্পিউটার ভাইরাস নির্মূল করা",
+  "ইন্টারনেট ট্রাফিক নিয়ন্ত্রণ করা",
+  "কম্পিউটার ঠান্ডা রাখা",
+  "হার্ডওয়্যার কন্ট্রোল করা"
+  ],
+  "answer": "ইন্টারনেট ট্রাফিক নিয়ন্ত্রণ করা"
+  },
+  {
+  "question": "HTML এ কোন ট্যাগ দিয়ে ছবি যোগ করা হয়?",
+  "options": [
+  "<image>",
+  "<img>",
+  "<src>",
+  "<picture>"
+  ],
+  "answer": "<img>"
+  },
+  {
+  "question": "‘Cookie’ ওয়েব ব্রাউজারে কী কাজ করে?",
+  "options": [
+  "ইউজারের তথ্য সংরক্ষণ করে",
+  "ইন্টারনেট ব্রাউজার বন্ধ করে",
+  "ওয়েবসাইটের ডিজাইন পরিবর্তন করে",
+  "ম্যালওয়্যার ইনস্টল করে"
+  ],
+  "answer": "ইউজারের তথ্য সংরক্ষণ করে"
+  },
+  {
+  "question": "কোনটি ‘Artificial Intelligence’ এর একটি উপশাখা নয়?",
+  "options": [
+  "Machine Learning",
+  "Deep Learning",
+  "Cloud Computing",
+  "Natural Language Processing"
+  ],
+  "answer": "Cloud Computing"
+  },
+  {
+  "question": "কোনটি কম্পিউটার নেটওয়ার্কের একটি ‘Topology’ নয়?",
+  "options": [
+  "Star",
+  "Ring",
+  "Cloud",
+  "Bus"
+  ],
+  "answer": "Cloud"
+  },
+  {
+  "question": "Python ভাষায় একটি ফাংশন তৈরি করতে কোন কীওয়ার্ড ব্যবহার করা হয়?",
+  "options": [
+  "func",
+  "function",
+  "def",
+  "lambda"
+  ],
+  "answer": "def"
+  },
+  {
+  "question": "কোনটি একটি ওপেন সোর্স অপারেটিং সিস্টেম?",
+  "options": [
+  "Windows",
+  "macOS",
+  "Linux",
+  "iOS"
+  ],
+  "answer": "Linux"
+  }
+  ]

@@ -1,0 +1,342 @@
+[
+  {
+    "question": "What is the synonym of the word 'happy'?",
+    "options": [
+      "Sad",
+      "Joyful",
+      "Angry",
+      "Fearful"
+    ],
+    "answer": "Joyful"
+  },
+  {
+    "question": "Choose the correct passive voice: 'She writes a letter.'",
+    "options": [
+      "A letter is written by her.",
+      "A letter was written by her.",
+      "A letter has written by her.",
+      "A letter is being written by her."
+    ],
+    "answer": "A letter is written by her."
+  },
+  {
+    "question": "Which of the following is a noun?",
+    "options": [
+      "Run",
+      "Quickly",
+      "Happiness",
+      "Bright"
+    ],
+    "answer": "Happiness"
+  },
+  {
+    "question": "Identify the correct spelling:",
+    "options": [
+      "Enviroment",
+      "Environment",
+      "Environmment",
+      "Enviroenment"
+    ],
+    "answer": "Environment"
+  },
+  {
+    "question": "What is the antonym of 'brave'?",
+    "options": [
+      "Hero",
+      "Fearless",
+      "Coward",
+      "Strong"
+    ],
+    "answer": "Coward"
+  },
+  {
+    "question": "Which sentence is in the future tense?",
+    "options": [
+      "He plays football.",
+      "He played football.",
+      "He is playing football.",
+      "He will play football."
+    ],
+    "answer": "He will play football."
+  },
+  {
+    "question": "What part of speech is the word 'quickly'?",
+    "options": [
+      "Noun",
+      "Verb",
+      "Adverb",
+      "Adjective"
+    ],
+    "answer": "Adverb"
+  },
+  {
+    "question": "Choose the correct preposition: 'He is good ___ mathematics.'",
+    "options": [
+      "at",
+      "in",
+      "on",
+      "with"
+    ],
+    "answer": "at"
+  },
+  {
+    "question": "Which of the following is an example of a simile?",
+    "options": [
+      "He is as brave as a lion.",
+      "He roars like thunder.",
+      "His heart is gold.",
+      "The sun smiled on us."
+    ],
+    "answer": "He is as brave as a lion."
+  },
+  {
+    "question": "Choose the correct article: 'I saw ___ elephant at the zoo.'",
+    "options": [
+      "a",
+      "an",
+      "the",
+      "no article"
+    ],
+    "answer": "an"
+  },
+  {
+  "question": "What is the meaning of the idiom 'once in a blue moon'?",
+  "options": [
+  "Very often",
+  "Rarely",
+  "Always",
+  "Every night"
+  ],
+  "answer": "Rarely"
+  },
+  {
+  "question": "Choose the correct sentence in indirect speech: He said, 'I am going to school.'",
+  "options": [
+  "He said that he was going to school.",
+  "He said that I am going to school.",
+  "He said he is going to school.",
+  "He says that he was going to school."
+  ],
+  "answer": "He said that he was going to school."
+  },
+  {
+  "question": "Which of the following words is a verb?",
+  "options": [
+  "Beauty",
+  "Beautiful",
+  "Beautify",
+  "Beautifully"
+  ],
+  "answer": "Beautify"
+  },
+  {
+  "question": "Select the correct synonym of 'brilliant'.",
+  "options": [
+  "Dull",
+  "Smart",
+  "Lazy",
+  "Ugly"
+  ],
+  "answer": "Smart"
+  },
+  {
+  "question": "Which one is a complex sentence?",
+  "options": [
+  "I went home and slept.",
+  "She is poor but honest.",
+  "If it rains, we will not go out.",
+  "He came, he saw, he conquered."
+  ],
+  "answer": "If it rains, we will not go out."
+  },
+  {
+  "question": "What is the past form of 'go'?",
+  "options": [
+  "Gone",
+  "Went",
+  "Goed",
+  "Goes"
+  ],
+  "answer": "Went"
+  },
+  {
+  "question": "Which of the following is a proper noun?",
+  "options": [
+  "River",
+  "Mountain",
+  "John",
+  "Teacher"
+  ],
+  "answer": "John"
+  },
+  {
+  "question": "Pick the correct form: 'He is ___ honest man.'",
+  "options": [
+  "a",
+  "an",
+  "the",
+  "no article"
+  ],
+  "answer": "an"
+  },
+  {
+  "question": "Which of the following expresses a universal truth?",
+  "options": [
+  "He was reading a book.",
+  "Water boils at 100°C.",
+  "She is playing cricket.",
+  "They are eating now."
+  ],
+  "answer": "Water boils at 100°C."
+  },
+  {
+  "question": "What is the opposite of 'generous'?",
+  "options": [
+  "Kind",
+  "Polite",
+  "Selfish",
+  "Smart"
+  ],
+  "answer": "Selfish"
+  },
+  {
+  "question": "Choose the correct interrogative form: 'She can sing.'",
+  "options": [
+  "She can sing?",
+  "Can she sing?",
+  "Does she can sing?",
+  "Is she can sing?"
+  ],
+  "answer": "Can she sing?"
+  },
+  {
+  "question": "Which sentence uses a metaphor?",
+  "options": [
+  "He eats like a pig.",
+  "Time is money.",
+  "She is as fast as a cheetah.",
+  "He is like his father."
+  ],
+  "answer": "Time is money."
+  },
+  {
+  "question": "Which tense is used in the sentence: 'She has finished her work'?",
+  "options": [
+  "Present Simple",
+  "Present Perfect",
+  "Past Perfect",
+  "Past Continuous"
+  ],
+  "answer": "Present Perfect"
+  },
+  {
+  "question": "What is the antonym of 'ancient'?",
+  "options": [
+  "Modern",
+  "Old",
+  "Historical",
+  "Traditional"
+  ],
+  "answer": "Modern"
+  },
+  {
+  "question": "Which sentence is in passive voice?",
+  "options": [
+  "The teacher teaches English.",
+  "English is taught by the teacher.",
+  "He is learning English.",
+  "The teacher is teaching English."
+  ],
+  "answer": "English is taught by the teacher."
+  },
+  {
+  "question": "What is the noun form of the word 'decide'?",
+  "options": [
+  "Decisive",
+  "Decision",
+  "Decider",
+  "Deciding"
+  ],
+  "answer": "Decision"
+  },
+  {
+  "question": "Identify the correct spelling:",
+  "options": [
+  "Enviroment",
+  "Envaironment",
+  "Environment",
+  "Envirunment"
+  ],
+  "answer": "Environment"
+  },
+  {
+  "question": "What is the meaning of the proverb 'A stitch in time saves nine'?",
+  "options": [
+  "It’s good to sew clothes early",
+  "Timely action prevents more trouble",
+  "Nine is a lucky number",
+  "You should learn stitching"
+  ],
+  "answer": "Timely action prevents more trouble"
+  },
+  {
+  "question": "Which of the following is an abstract noun?",
+  "options": [
+  "Table",
+  "Happiness",
+  "Teacher",
+  "Tree"
+  ],
+  "answer": "Happiness"
+  },
+  {
+  "question": "What does 'Who' refer to in grammar?",
+  "options": [
+  "Relative pronoun",
+  "Interjection",
+  "Adverb",
+  "Conjunction"
+  ],
+  "answer": "Relative pronoun"
+  },
+  {
+  "question": "Choose the correct comparative form: '___ than his brother.'",
+  "options": [
+  "Tall",
+  "Taller",
+  "Tallest",
+  "Most tall"
+  ],
+  "answer": "Taller"
+  },
+  {
+  "question": "Which one is a question tag of: 'He is a doctor'?",
+  "options": [
+  "Is he?",
+  "Isn’t he?",
+  "Doesn’t he?",
+  "Wasn’t he?"
+  ],
+  "answer": "Isn’t he?"
+  },
+  {
+  "question": "Identify the correct reported speech: He said, 'I can swim.'",
+  "options": [
+  "He said he could swim.",
+  "He said he can swim.",
+  "He says he could swim.",
+  "He says he can swimming."
+  ],
+  "answer": "He said he could swim."
+  },
+  {
+  "question": "Which sentence expresses a condition?",
+  "options": [
+  "He plays cricket every day.",
+  "If it rains, the match will be cancelled.",
+  "She was watching TV.",
+  "They are dancing."
+  ],
+  "answer": "If it rains, the match will be cancelled."
+  }
+  ]

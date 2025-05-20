@@ -1,0 +1,894 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Premium Site with Light/Dark Mode</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700;900&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --gold: #ffd700;
+      --gold-dark: #cca300;
+      --bg-dark: #0e0e1a;
+      --bg-light: #f9f9f9;
+      --text-dark: #fff;
+      --text-light: #222;
+      --header-bg-dark: rgba(10,10,20,0.98);
+      --header-bg-light: rgba(255,255,255,0.95);
+      --menu-bg-dark: #22223f;
+      --menu-bg-light: #eee;
+      --menu-text-dark: #fffacd;
+      --menu-text-light: #222;
+      --link-bg-dark: linear-gradient(to right, #ffd700, #ffcc00);
+      --link-bg-light: linear-gradient(to right, #f0c000, #d4a200);
+    }
+
+    /* Dark mode default */
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: var(--bg-dark);
+      color: var(--text-dark);
+      overflow-x: hidden;
+      transition: background 0.5s, color 0.5s;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: var(--header-bg-dark);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 20px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 0 12px var(--gold);
+      transition: background 0.5s, color 0.5s;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo img {
+      height: 35px;
+      transition: filter 0.5s;
+    }
+
+    .logo span {
+      font-weight: 800;
+      font-size: 20px;
+      display: flex;
+      align-items: center;
+      color: var(--text-dark);
+      transition: color 0.5s;
+    }
+
+    .premium-icon {
+      width: 22px;
+      margin-left: 6px;
+      filter: drop-shadow(0 0 4px var(--gold));
+      transition: filter 0.5s;
+    }
+
+    .menu-toggle {
+      font-size: 30px;
+      cursor: pointer;
+      color: var(--gold);
+      transition: transform 0.3s ease, color 0.5s;
+    }
+
+    .menu-toggle:hover {
+      transform: scale(1.1);
+    }
+
+    .menu {
+      position: absolute;
+      top: 75px;
+      right: 30px;
+      background: var(--menu-bg-dark);
+      border-radius: 12px;
+      display: none;
+      flex-direction: column;
+      width: 180px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.7);
+      z-index: 1100;
+      transition: background 0.5s, color 0.5s;
+    }
+
+    .menu a {
+      padding: 14px 18px;
+      color: var(--menu-text-dark);
+      text-decoration: none;
+      border-bottom: 1px solid #333;
+      transition: background 0.3s ease, color 0.5s;
+    }
+
+    .menu a:hover {
+      background: #33335a;
+    }
+
+    .slider {
+      width: 100%;
+      max-width: 600px;
+      height: 180px;
+      margin: 20px auto;
+      border-radius: 14px;
+      overflow: hidden;
+      position: relative;
+      box-shadow: 0 0 15px var(--gold);
+      transition: box-shadow 0.5s;
+    }
+
+    .slides {
+      display: flex;
+      animation: slide 17s infinite ease-in-out;
+    }
+
+    .slides img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      transition: filter 4s;
+    }
+
+    @keyframes slide {
+      0% { transform: translateX(0%); }
+      33% { transform: translateX(-300%); }
+      66% { transform: translateX(-200%); }
+      100% { transform: translateX(0%); }
+    }
+
+    .link-boxes {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      padding: 25px 15px;
+    }
+
+    .link-boxes a {
+      background: var(--link-bg-dark);
+      color: #111;
+      padding: 10px 20px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 14px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+      transition: all 0.3s ease;
+    }
+
+    .link-boxes a:hover {
+      transform: scale(1.06);
+      background: linear-gradient(to right, #fff400, #ffc107);
+    }
+
+    /* Light mode styles */
+    body.light-mode {
+      background: var(--bg-light);
+      color: var(--text-light);
+    }
+
+    body.light-mode header {
+      background: var(--header-bg-light);
+      box-shadow: 0 0 12px var(--gold-dark);
+      color: var(--text-light);
+    }
+
+    body.light-mode .logo span {
+      color: var(--text-light);
+    }
+
+    body.light-mode .premium-icon {
+      filter: drop-shadow(0 0 4px var(--gold-dark));
+    }
+
+    body.light-mode .menu-toggle {
+      color: var(--gold-dark);
+    }
+
+    body.light-mode .menu {
+      background: var(--menu-bg-light);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    }
+
+    body.light-mode .menu a {
+      color: var(--menu-text-light);
+      border-bottom: 1px solid #ccc;
+    }
+
+    body.light-mode .menu a:hover {
+      background: #ddd;
+      color: #111;
+    }
+
+    body.light-mode .slider {
+      box-shadow: 0 0 15px var(--gold-dark);
+    }
+
+    body.light-mode .slides img {
+      filter: brightness(0.9);
+    }
+
+    body.light-mode .link-boxes a {
+      background: var(--link-bg-light);
+      color: #111;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    }
+
+    /* Light/Dark toggle button */
+    .toggle-switch {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      user-select: none;
+      color: var(--gold);
+      font-weight: 600;
+      font-size: 16px;
+      transition: color 0.5s;
+    }
+
+    body.light-mode .toggle-switch {
+      color: var(--gold-dark);
+    }
+
+    .toggle-switch svg {
+      width: 24px;
+      height: 24px;
+      fill: currentColor;
+      transition: transform 0.5s ease;
+    }
+
+    /* Small devices */
+    @media (max-width: 500px) {
+      .slider {
+        height: 140px;
+      }
+
+      .slides img {
+        height: 140px;
+      }
+
+      .logo span {
+        font-size: 17px;
+      }
+
+      .menu {
+        width: 160px;
+        right: 10px;
+      }
+
+      .toggle-switch {
+        font-size: 14px;
+        gap: 5px;
+      }
+      .menu a {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 18px;
+      color: var(--menu-text-dark);
+      text-decoration: none;
+      border-bottom: 1px solid #333;
+      transition: background 0.3s ease, color 0.5s;
+      }
+      
+      .menu a:hover {
+      background: #33335a;
+      }
+      
+      .menu-icon {
+      width: 20px;
+      height: 20px;
+      object-fit: contain;
+      filter: drop-shadow(0 0 2px var(--gold));
+      }
+
+      .toggle-switch svg {
+        width: 20px;
+        height: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo">
+    <img src="https://i.postimg.cc/y65PnwgV/speech-bubble.png" alt="Logo" />
+    <span>Bangla Quiz Hub
+      <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
+      <dotlottie-player src="https://lottie.host/df0c9417-5ae0-4ce5-8dbe-394577955ab9/PIUvuDxZED.lottie" background="transparent" speed="1" style="width: 60px; height: 60px" loop autoplay></dotlottie-player>
+    </span>
+  </div>
+  <div style="display: flex; align-items:center; gap: 15px;">
+    <div class="toggle-switch" id="modeToggle" title="Light / Dark Mode">
+      <svg id="modeIcon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" >
+        <!-- Moon icon initially -->
+        <path d="M21.75 15.56a9 9 0 01-12.3-12.3 7 7 0 0012.3 12.3z"/>
+      </svg>
+      <span id="modeText">Night</span>
+    </div>
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+  </div>
+</header>
+
+<div class="menu" id="dropdownMenu">
+<a href="index.html">
+<img src="https://i.postimg.cc/KjrRPPJH/home.png" alt="Home " class="menu-icon" />
+Home
+</a>
+  <a href="rank.html">
+    <img src="https://i.postimg.cc/hjYvxFDw/ranking.png" alt="হোম আইকন" class="menu-icon" />
+    My Rank 
+  </a>
+  <a href="history.html">
+    <img src="https://i.postimg.cc/251SYkNt/time-management.png" alt="অ্যাপ সার্ভিস আইকন" class="menu-icon" />
+    History
+  </a>
+  <a href="faq.html">
+    <img src="https://i.postimg.cc/Y0rKnf6Q/faq.png" alt="যোগাযোগ আইকন" class="menu-icon" />
+    FAQ
+  </a>
+  <a href="dev.html">
+  <img src="https://i.postimg.cc/hvcz2wZM/development.png" alt="যোগাযোগ আইকন" class="menu-icon" />
+  Contact Dev
+  </a>
+</div>
+<!-- Firebase SDK -->
+<script type="module">
+  // Import Firebase libraries
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-app.js";
+  import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-auth.js";
+
+  // Your Firebase configuration (replace with your own)
+  const firebaseConfig = {
+  apiKey: "AIzaSyCl1854qJoh3hDbYTEwpILtdV3BC6xxYmE",
+  authDomain: "bangla-quiz-hub-ffb2a.firebaseapp.com",
+  projectId: "bangla-quiz-hub-ffb2a",
+  storageBucket: "bangla-quiz-hub-ffb2a.firebasestorage.app",
+  messagingSenderId: "798921821758",
+  appId: "1:798921821758:web:75df4b29b4e16341e5cb6f",
+  measurementId: "G-WX2PHQQFKL"
+};
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const auth = getAuth(app);
+
+  // Check authentication status
+  onAuthStateChanged(auth, (user) => {
+    if (!user) {
+      // Not logged in, redirect to signup page
+      window.location.href = "signup.html";
+    }
+    // Logged in: do nothing
+  });
+</script>
+
+<script>
+  const modeToggle = document.getElementById("modeToggle");
+  const modeIcon = document.getElementById("modeIcon");
+  const modeText = document.getElementById("modeText");
+  const body = document.body;
+
+  // SVG icons for sun and moon
+  const sunIcon = '<path d="M12 18a6 6 0 100-12 6 6 0 000 12zm0-14v-2m0 18v-2m8-8h-2m-12 0H2m15.364-7.364l-1.414 1.414M6.05 17.95l-1.414 1.414m12.728 0l-1.414-1.414M6.05 6.05L4.636 4.636"/>';
+  const moonIcon = '<path d="M21.75 15.56a9 9 0 01-12.3-12.3 7 7 0 0012.3 12.3z"/>';
+
+  function setMode(dark) {
+    if(dark) {
+      body.classList.remove('light-mode');
+      modeIcon.innerHTML = moonIcon;
+      modeText.textContent = 'Night';
+    } else {
+      body.classList.add('light-mode');
+      modeIcon.innerHTML = sunIcon;
+      modeText.textContent = 'Day';
+    }
+  }
+
+  // Initial mode - default dark
+  let darkMode = true;
+  setMode(darkMode);
+
+  modeToggle.addEventListener('click', () => {
+    darkMode = !darkMode;
+    setMode(darkMode);
+  });
+
+  // Menu toggle
+  function toggleMenu() {
+    const menu = document.getElementById("dropdownMenu");
+    menu.style.display = menu.style.display === "flex" ? "none" : "flex";
+  }
+
+  window.addEventListener("click", function(e) {
+    const menu = document.getElementById("dropdownMenu");
+    const toggle = document.querySelector(".menu-toggle");
+    if (!menu.contains(e.target) && !toggle.contains(e.target)) {
+      menu.style.display = "none";
+    }
+  });
+</script>
+<div id="premium-glow-image-container">
+  <img src="https://i.postimg.cc/SxHRzVT6/20250520-113036.jpg" alt="Glowing Image" />
+</div>
+
+<style>
+  #premium-glow-image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    background: transparent;
+  }
+
+  #premium-glow-image-container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 
+      0 0 20px rgba(0, 255, 255, 0.5),
+      0 0 40px rgba(0, 200, 255, 0.4),
+      0 0 60px rgba(0, 150, 255, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  #premium-glow-image-container img:hover {
+    transform: scale(1.03);
+    box-shadow: 
+      0 0 30px rgba(0, 255, 255, 0.7),
+      0 0 60px rgba(0, 200, 255, 0.5),
+      0 0 90px rgba(0, 150, 255, 0.4);
+  }
+</style>
+<!-- Quiz Section Start -->
+<style>
+  /* আইসোলেটেড কুইজ wrapper */
+  .quiz-wrapper {
+    font-family: 'Siyam Rupali', Arial, sans-serif;
+    background: transparent !important;
+    color: #FFD600 !important;
+    margin: 0; padding: 0;
+    display: flex; justify-content: center; align-items: flex-start; /* উপরে বসানোর জন্য flex-start */
+    padding-top: 20px;
+    width: 100%;
+    user-select: none;
+    pointer-events: auto;
+    z-index: 9999; /* সর্বোচ্চ উপরে */
+  }
+  .quiz-wrapper * {
+    box-sizing: border-box;
+  }
+  #quiz-container {
+    background: rgba(0, 0, 0, 0.65);
+    border-radius: 15px;
+    box-shadow: 0 0 25px #FFD600cc;
+    max-width: 480px;
+    width: 90%;
+    padding: 25px 30px;
+    text-align: center;
+    color: #FFD600;
+    user-select: none;
+  }
+  #quiz-container h1 {
+    margin-bottom: 15px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    background: linear-gradient(90deg, #fff700, #ffc700);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 1.8rem;
+  }
+  #quiz-container #question {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+    min-height: 80px;
+    font-weight: 700;
+    text-shadow: 0 0 12px #ffd600bb;
+  }
+  #quiz-container .option {
+    background: rgba(255,255,255,0.07);
+    border: 2px solid #ffd600;
+    border-radius: 10px;
+    padding: 14px 22px;
+    margin: 12px 0;
+    cursor: pointer;
+    font-size: 1.15rem;
+    font-weight: 600;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+    color: #ffd600;
+    outline: none;
+    user-select: none;
+  }
+  #quiz-container .option:hover:not(:disabled) {
+    background: #fff700;
+    color: #000;
+    box-shadow: 0 0 20px #fff700;
+  }
+  #quiz-container .option.correct {
+    background: #b1ff00cc !important;
+    border-color: #aaff00 !important;
+    color: #003300 !important;
+    animation: sparkle 1.2s ease forwards;
+  }
+  #quiz-container .option.wrong {
+    background: #ff3b3bcc !important;
+    border-color: #ff0000 !important;
+    color: #330000 !important;
+    animation: shake 0.8s ease forwards;
+  }
+  #quiz-container #correct-answer {
+    margin-top: 10px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #aaff00;
+    text-shadow: 0 0 10px #aaff00bb;
+  }
+  #quiz-container #next-btn {
+    margin-top: 25px;
+    background: linear-gradient(45deg, #fff700, #ffc700);
+    color: #000;
+    font-weight: 900;
+    padding: 14px 48px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 1.15rem;
+    box-shadow: 0 0 25px #ffd600;
+    transition: transform 0.3s ease;
+    user-select: none;
+  }
+  #quiz-container #next-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    box-shadow: none;
+  }
+  #quiz-container #next-btn:hover:not(:disabled) {
+    transform: scale(1.1);
+  }
+  #quiz-container #score {
+    margin-top: 22px;
+    font-weight: 700;
+    font-size: 1.3rem;
+    letter-spacing: 1.8px;
+    text-shadow: 0 0 15px #ffd600cc;
+  }
+
+  @keyframes sparkle {
+    0%,100% {
+      text-shadow:
+        0 0 5px #aaff00,
+        0 0 10px #aaff00,
+        0 0 20px #ccff00,
+        0 0 30px #d4ff00,
+        0 0 40px #eaff00;
+      box-shadow:
+        0 0 10px #aaff00,
+        0 0 20px #ccff00,
+        0 0 30px #d4ff00;
+    }
+    50% {
+      text-shadow:
+        0 0 20px #d4ff00,
+        0 0 40px #d4ff00,
+        0 0 60px #eaff00;
+      box-shadow:
+        0 0 25px #d4ff00,
+        0 0 40px #eaff00,
+        0 0 60px #eaff00;
+    }
+  }
+
+  @keyframes shake {
+    0%,100% {transform: translateX(0);}
+    20%, 60% {transform: translateX(-12px);}
+    40%, 80% {transform: translateX(12px);}
+  }
+
+  /* মোবাইল রেসপন্সিভ */
+  @media (max-width: 500px) {
+    #quiz-container {
+      padding: 18px 20px;
+      max-width: 95vw;
+    }
+    #quiz-container h1 {
+      font-size: 1.5rem;
+    }
+    #quiz-container #question {
+      font-size: 1.1rem;
+      min-height: 70px;
+    }
+    #quiz-container .option {
+      font-size: 1rem;
+      padding: 12px 15px;
+      margin: 10px 0;
+    }
+    #quiz-container #next-btn {
+      padding: 12px 30px;
+      font-size: 1rem;
+    }
+    #quiz-container #score {
+      font-size: 1.1rem;
+    }
+  }
+</style>
+
+<div class="quiz-wrapper" aria-live="polite">
+  <div id="quiz-container" role="region" aria-label="বাংলা Quiz Exam">
+    <h1>বাংলা Quiz Exam</h1>
+    <div id="question" tabindex="0">লোড হচ্ছে...</div>
+    <div id="options" role="list"></div>
+    <div id="correct-answer" aria-live="assertive"></div>
+    <button id="next-btn" disabled aria-disabled="true">পরবর্তী</button>
+    <div id="score" aria-live="polite">পয়েন্ট: 0</div>
+  </div>
+</div>
+
+<!-- Firebase CDN -->
+<script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore-compat.js"></script>
+
+<script>
+(() => {
+  // Firebase Config - নিজের config দিয়ে বদলাবে
+  const firebaseConfig = {
+  apiKey: "AIzaSyCl1854qJoh3hDbYTEwpILtdV3BC6xxYmE",
+  authDomain: "bangla-quiz-hub-ffb2a.firebaseapp.com",
+  projectId: "bangla-quiz-hub-ffb2a",
+  storageBucket: "bangla-quiz-hub-ffb2a.firebasestorage.app",
+  messagingSenderId: "798921821758",
+  appId: "1:798921821758:web:75df4b29b4e16341e5cb6f",
+  measurementId: "G-WX2PHQQFKL"
+};
+
+  if (!firebase.apps.length) {
+    firebase.initializeApp(firebaseConfig);
+  }
+  const db = firebase.firestore();
+
+  // অস্থায়ী ইউজার আইডি (তুমি এখান থেকে নিজের auth থেকে uid নাও)
+  const userId = 'guest_user_1234';
+
+  // ডেইলি ডকুমেন্ট আইডি (yyyy-mm-dd)
+  const today = new Date().toISOString().slice(0, 10);
+
+  // DOM Elements
+  const questionEl = document.getElementById('question');
+  const optionsEl = document.getElementById('options');
+  const nextBtn = document.getElementById('next-btn');
+  const scoreEl = document.getElementById('score');
+  const correctAnswerEl = document.getElementById('correct-answer');
+
+  // Variables
+  let quizData = [];
+  let currentQuestionIndex = 0;
+  let score = 0;
+  let answered = false;
+
+  // Load quiz data from math.json
+  fetch('chemistry.json')
+    .then(res => res.json())
+    .then(data => {
+      quizData = data;
+      shuffleArray(quizData);
+      showQuestion();
+    })
+    .catch(() => {
+      questionEl.textContent = "কুইজ লোড করতে সমস্যা হয়েছে। দয়া করে পরে চেষ্টা করুন।";
+    });
+
+  // Shuffle helper function
+  function shuffleArray(arr) {
+    for(let i = arr.length - 1; i > 0; i--){
+      const j = Math.floor(Math.random() * (i + 1));
+      [arr[i], arr[j]] = [arr[j], arr[i]];
+    }
+  }
+
+  // Show question
+  function showQuestion() {
+    answered = false;
+    nextBtn.disabled = true;
+    nextBtn.setAttribute('aria-disabled', 'true');
+    correctAnswerEl.textContent = '';
+    optionsEl.innerHTML = '';
+
+    if(currentQuestionIndex >= quizData.length){
+      // Quiz finished
+      questionEl.textContent = "অভিনন্দন! তুমি সব প্রশ্ন শেষ করেছো।";
+      optionsEl.innerHTML = '';
+      nextBtn.style.display = 'none';
+      scoreEl.textContent = `সর্বমোট পয়েন্ট: ${score}`;
+      return;
+    }
+
+    const current = quizData[currentQuestionIndex];
+    questionEl.textContent = current.question;
+
+    // Show options
+    current.options.forEach((option, idx) => {
+      const button = document.createElement('button');
+      button.classList.add('option');
+      button.textContent = option;
+      button.setAttribute('role', 'listitem');
+      button.setAttribute('tabindex', '0');
+      button.type = 'button';
+      button.onclick = () => selectOption(button, current.answer);
+      optionsEl.appendChild(button);
+    });
+  }
+
+  // Select option handler
+  function selectOption(button, correctAnswer) {
+    if(answered) return; // prevent multiple answers
+    answered = true;
+
+    const selectedAnswer = button.textContent.trim();
+
+    // Disable all buttons
+    [...optionsEl.children].forEach(btn => {
+      btn.disabled = true;
+      btn.style.cursor = 'default';
+    });
+
+    if(selectedAnswer === correctAnswer){
+      button.classList.add('correct');
+      score++;
+      updateScoreInFirestore(score);
+      correctAnswerEl.textContent = 'সঠিক উত্তর!';
+    } else {
+      button.classList.add('wrong');
+      correctAnswerEl.textContent = `সঠিক উত্তর: ${correctAnswer}`;
+      // Highlight correct option
+      [...optionsEl.children].forEach(btn => {
+        if(btn.textContent.trim() === correctAnswer){
+          btn.classList.add('correct');
+        }
+      });
+    }
+
+    scoreEl.textContent = `পয়েন্ট: ${score}`;
+    nextBtn.disabled = false;
+    nextBtn.setAttribute('aria-disabled', 'false');
+    nextBtn.focus();
+  }
+
+  // Next question
+  nextBtn.onclick = () => {
+    currentQuestionIndex++;
+    showQuestion();
+  };
+
+  // Update score in Firebase Firestore
+  function updateScoreInFirestore(newScore) {
+    const docRef = db.collection('user_scores').doc(userId);
+    docRef.set({
+      lastUpdated: firebase.firestore.FieldValue.serverTimestamp(),
+      date: today,
+      score: newScore
+    }, {merge: true})
+    .catch((err) => {
+      console.error("Firebase আপডেট ত্রুটি:", err);
+    });
+  }
+})();
+</script>
+
+<style>
+  .swygen-footer {
+    background: transparent;
+    padding: 60px 20px 30px;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    color: #ffffffdd;
+    position: relative;
+    z-index: 99;
+  }
+
+  .swygen-footer h2 {
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 30px;
+    background: linear-gradient(90deg, #FFD700, #FF8C00);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: glowText 2s ease-in-out infinite alternate;
+  }
+
+  @keyframes glowText {
+    0% { text-shadow: 0 0 8px #ffdd00; }
+    100% { text-shadow: 0 0 20px #ffa500; }
+  }
+
+  .swygen-profile-img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 3px solid #ffffff99;
+    margin: 20px auto;
+    object-fit: cover;
+    box-shadow: 0 0 25px #ffd700cc;
+    transition: 0.3s ease;
+  }
+
+  .swygen-profile-img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 35px #ffe100;
+  }
+
+  .footer-bottom {
+    margin-top: 25px;
+    font-size: 18px;
+    color: #cccccc;
+  }
+
+  .footer-bottom a {
+    color: #FFD700;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.3s;
+  }
+
+  .footer-bottom a:hover {
+    color: #ffffff;
+    text-shadow: 0 0 10px #FFD700;
+  }
+
+  .verified-icon {
+    width: 18px;
+    vertical-align: middle;
+    margin-left: 6px;
+  }
+
+  .swygen-socials {
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+    flex-wrap: wrap;
+  }
+
+  .swygen-socials a img {
+    width: 30px;
+    height: 30px;
+    transition: 0.3s;
+    filter: drop-shadow(0 0 5px #FFD700);
+  }
+
+  .swygen-socials a:hover img {
+    transform: scale(1.15);
+    filter: drop-shadow(0 0 12px #ffa500);
+  }
+</style>
+
+<div class="swygen-footer">
+  <h2>
+    <img src="" alt="" style="width: 100px; vertical-align: middle; margin-right: 6px;">
+    This service is open and free for everyone from Swygen Official. I hope it will benefit many people.
+  </h2>
+
+  <img src="https://i.postimg.cc/L6pNSJYH/Picsart-25-03-13-18-18-11-773.jpg" alt="Profile Picture" class="swygen-profile-img">
+
+  <div class="footer-bottom">
+    2025 All right resorb | Developer By 
+    <a href="https://swygen.netlify.app/" target="_blank">Swygen</a>
+    <img src="verified-icon.png" class="verified-icon" alt="">
+  </div>
+
+  <div class="swygen-socials">
+    <a href="https://www.facebook.com/Ariful.Rahman.Shaoun"><img src="https://i.postimg.cc/nzx6mkVC/facebook.png" alt="Facebook"></a>
+    <a href="https://t.me/swygen"><img src="https://i.postimg.cc/FzdygQBs/telegram.png" alt="Telegram"></a>
+    <a href="https://wa.me/message/3CECY4PPRT6TO1"><img src="https://i.postimg.cc/fRrzY11k/mobile.png" alt="WhatsApp"></a>
+    <a href="+8801342965008"><img src="https://i.postimg.cc/8PLMKmT1/telephone.png" alt="Phone"></a>
+    <a href="swygenofficial@gmail.com"><img src="https://i.postimg.cc/Hstj8Zp7/email.png" alt="Email"></a>
+  </div>
+</div>
+</body>
+</html>

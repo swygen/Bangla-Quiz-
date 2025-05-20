@@ -1,0 +1,652 @@
+[
+  {
+    "question": "Choose the correct form of the verb: She ______ to school every day.",
+    "options": [
+      "go",
+      "goes",
+      "going",
+      "gone"
+    ],
+    "answer": "goes"
+  },
+  {
+    "question": "Identify the sentence with correct subject-verb agreement.",
+    "options": [
+      "The boys plays football.",
+      "The boy play football.",
+      "The boys play football.",
+      "The boy plays footballs."
+    ],
+    "answer": "The boys play football."
+  },
+  {
+    "question": "Which of the following is an example of a proper noun?",
+    "options": [
+      "city",
+      "river",
+      "Dhaka",
+      "school"
+    ],
+    "answer": "Dhaka"
+  },
+  {
+    "question": "Choose the correct sentence.",
+    "options": [
+      "He don’t like ice cream.",
+      "He doesn’t likes ice cream.",
+      "He doesn’t like ice cream.",
+      "He don’t likes ice cream."
+    ],
+    "answer": "He doesn’t like ice cream."
+  },
+  {
+    "question": "Fill in the blank with the correct preposition: The cat is hiding _____ the table.",
+    "options": [
+      "in",
+      "on",
+      "under",
+      "at"
+    ],
+    "answer": "under"
+  },
+  {
+    "question": "Select the correct passive voice form of: 'The teacher teaches the lesson.'",
+    "options": [
+      "The lesson was taught by the teacher.",
+      "The lesson is taught by the teacher.",
+      "The lesson taught by the teacher.",
+      "The lesson teaching by the teacher."
+    ],
+    "answer": "The lesson is taught by the teacher."
+  },
+  {
+    "question": "Choose the correct comparative form of the adjective: 'fast'",
+    "options": [
+      "fastly",
+      "faster",
+      "fastest",
+      "more fast"
+    ],
+    "answer": "faster"
+  },
+  {
+    "question": "Identify the correct sentence with proper use of articles.",
+    "options": [
+      "I have a apple.",
+      "She is an honest girl.",
+      "He is a honest man.",
+      "They live in an university."
+    ],
+    "answer": "She is an honest girl."
+  },
+  {
+    "question": "Fill in the blank with the correct pronoun: This is my book. Please give it to ____.",
+    "options": [
+      "I",
+      "me",
+      "mine",
+      "my"
+    ],
+    "answer": "me"
+  },
+  {
+    "question": "Choose the correct question tag: You are coming, ____?",
+    "options": [
+      "aren’t you",
+      "isn’t you",
+      "don’t you",
+      "doesn’t you"
+    ],
+    "answer": "aren’t you"
+  },
+  {
+    "question": "Identify the correct use of the future tense.",
+    "options": [
+      "I will goes to the market.",
+      "I will going to the market.",
+      "I will go to the market.",
+      "I go to the market."
+    ],
+    "answer": "I will go to the market."
+  },
+  {
+    "question": "Select the sentence that uses the past perfect tense.",
+    "options": [
+      "She had finished her homework before dinner.",
+      "She finishes her homework before dinner.",
+      "She will finish her homework before dinner.",
+      "She is finishing her homework before dinner."
+    ],
+    "answer": "She had finished her homework before dinner."
+  },
+  {
+    "question": "Choose the correct conjunction to complete the sentence: I like tea ____ coffee.",
+    "options": [
+      "and",
+      "but",
+      "or",
+      "so"
+    ],
+    "answer": "and"
+  },
+  {
+    "question": "Which sentence is in the passive voice?",
+    "options": [
+      "The dog chased the cat.",
+      "The cat was chased by the dog.",
+      "The dog is chasing the cat.",
+      "The cat chases the dog."
+    ],
+    "answer": "The cat was chased by the dog."
+  },
+  {
+    "question": "Fill in the blank with the correct form of the verb: She ______ English very well.",
+    "options": [
+      "speaks",
+      "speak",
+      "speaking",
+      "spoken"
+    ],
+    "answer": "speaks"
+  },
+  {
+  "question": "Choose the correct sentence:",
+  "options": [
+  "Neither of the boys are playing.",
+  "Neither of the boys is playing.",
+  "Neither of the boys were playing.",
+  "Neither of the boys be playing."
+  ],
+  "answer": "Neither of the boys is playing."
+  },
+  {
+  "question": "Identify the error in the sentence: ‘He suggested me to go there.’",
+  "options": [
+  "He should be ‘suggested me going’",
+  "No error",
+  "Use ‘suggested that I go’ instead",
+  "Use ‘suggested to me’"
+  ],
+  "answer": "Use ‘suggested that I go’ instead"
+  },
+  {
+  "question": "Choose the sentence with correct use of conditional:",
+  "options": [
+  "If I would have seen her, I would tell her.",
+  "If I had seen her, I would have told her.",
+  "If I saw her, I would have told her.",
+  "If I would see her, I would tell her."
+  ],
+  "answer": "If I had seen her, I would have told her."
+  },
+  {
+  "question": "Fill in the blank with the correct modal verb: You ______ have told me about the problem earlier.",
+  "options": [
+  "must",
+  "should",
+  "can",
+  "might"
+  ],
+  "answer": "should"
+  },
+  {
+  "question": "Select the correct form of the verb: 'Each of the students ____ a book.'",
+  "options": [
+  "have",
+  "has",
+  "are",
+  "is"
+  ],
+  "answer": "has"
+  },
+  {
+  "question": "Identify the correct passive voice form: 'People speak English all over the world.'",
+  "options": [
+  "English spoken all over the world.",
+  "English is spoken all over the world.",
+  "English was spoken all over the world.",
+  "English spoke all over the world."
+  ],
+  "answer": "English is spoken all over the world."
+  },
+  {
+  "question": "Choose the correctly punctuated sentence:",
+  "options": [
+  "He said he would come, but he didn’t.",
+  "He said, he would come but he didn’t.",
+  "He said he would come but, he didn’t.",
+  "He said he would come but he didn’t."
+  ],
+  "answer": "He said he would come, but he didn’t."
+  },
+  {
+  "question": "Select the sentence using an infinitive correctly:",
+  "options": [
+  "She likes to swim in the river.",
+  "She likes swimming in the river to.",
+  "She likes swim in the river.",
+  "She likes to swimming in the river."
+  ],
+  "answer": "She likes to swim in the river."
+  },
+  {
+  "question": "Identify the correct relative pronoun: This is the book ______ I told you about.",
+  "options": [
+  "who",
+  "which",
+  "whom",
+  "whose"
+  ],
+  "answer": "which"
+  },
+  {
+  "question": "Choose the correct form: I wish I ______ taller.",
+  "options": [
+  "am",
+  "was",
+  "were",
+  "be"
+  ],
+  "answer": "were"
+  },
+  {
+  "question": "Choose the correct sentence:",
+  "options": [
+  "Hardly had I reached when it started raining.",
+  "Hardly I had reached when it started raining.",
+  "Had I hardly reached when it started raining.",
+  "I hardly had reached when it started raining."
+  ],
+  "answer": "Hardly had I reached when it started raining."
+  },
+  {
+  "question": "Fill in the blank with correct preposition: He is good _____ playing chess.",
+  "options": [
+  "at",
+  "in",
+  "on",
+  "with"
+  ],
+  "answer": "at"
+  },
+  {
+  "question": "Select the correct indirect speech form: He said, 'I am coming tomorrow.'",
+  "options": [
+  "He said that he was coming tomorrow.",
+  "He said that he is coming tomorrow.",
+  "He said that he would come the next day.",
+  "He said that he comes tomorrow."
+  ],
+  "answer": "He said that he would come the next day."
+  },
+  {
+  "question": "Choose the correct sentence:",
+  "options": [
+  "Scarcely had she entered the room than everyone stood up.",
+  "Scarcely she had entered the room than everyone stood up.",
+  "She had scarcely entered the room than everyone stood up.",
+  "Scarcely had she entered the room when everyone stood up."
+  ],
+  "answer": "Scarcely had she entered the room when everyone stood up."
+  },
+  {
+  "question": "Identify the correct passive voice form: They are repairing the road.",
+  "options": [
+  "The road is being repaired.",
+  "The road was being repaired.",
+  "The road has been repaired.",
+  "The road will be repaired."
+  ],
+  "answer": "The road is being repaired."
+  },
+  {
+  "question": "Choose the sentence with correct use of articles:",
+  "options": [
+  "She is an university student.",
+  "He has a umbrella.",
+  "They live in a old house.",
+  "She saw an eagle."
+  ],
+  "answer": "She saw an eagle."
+  },
+  {
+  "question": "Choose the correct sentence:",
+  "options": [
+  "If he were here, he would help us.",
+  "If he was here, he would help us.",
+  "If he would be here, he would help us.",
+  "If he is here, he would help us."
+  ],
+  "answer": "If he were here, he would help us."
+  },
+  {
+  "question": "Select the sentence with correct subject-verb agreement:",
+  "options": [
+  "Neither of them were available.",
+  "Neither of them is available.",
+  "Neither of them are available.",
+  "Neither of them be available."
+  ],
+  "answer": "Neither of them is available."
+  },
+  {
+  "question": "Identify the correct passive voice form: 'They have finished the project.'",
+  "options": [
+  "The project has finished.",
+  "The project has been finished.",
+  "The project is finished.",
+  "The project was finished."
+  ],
+  "answer": "The project has been finished."
+  },
+  {
+  "question": "Choose the correct indirect speech: She said, ‘I can swim very fast.’",
+  "options": [
+  "She said that she can swim very fast.",
+  "She said that she could swim very fast.",
+  "She said that she will swim very fast.",
+  "She said that she swims very fast."
+  ],
+  "answer": "She said that she could swim very fast."
+  },
+  {
+  "question": "Select the correct use of the infinitive: I am looking forward to _____ from you.",
+  "options": [
+  "hear",
+  "hearing",
+  "to hear",
+  "heard"
+  ],
+  "answer": "hearing"
+  },
+  {
+  "question": "Choose the correct sentence with modal verb:",
+  "options": [
+  "You must to finish your homework.",
+  "You must finish your homework.",
+  "You must finishes your homework.",
+  "You must finishing your homework."
+  ],
+  "answer": "You must finish your homework."
+  },
+  {
+  "question": "Identify the correct sentence:",
+  "options": [
+  "Each of the students have a book.",
+  "Each of the students has a book.",
+  "Each of the students are having a book.",
+  "Each of the students were having a book."
+  ],
+  "answer": "Each of the students has a book."
+  },
+  {
+  "question": "Select the correct conditional sentence:",
+  "options": [
+  "If I will see him, I will tell you.",
+  "If I see him, I will tell you.",
+  "If I saw him, I will tell you.",
+  "If I had seen him, I tell you."
+  ],
+  "answer": "If I see him, I will tell you."
+  },
+  {
+  "question": "Fill in the blank with correct preposition: She is interested _____ learning new languages.",
+  "options": [
+  "in",
+  "on",
+  "at",
+  "for"
+  ],
+  "answer": "in"
+  },
+  {
+  "question": "Choose the correct relative pronoun: The man _____ helped me is my uncle.",
+  "options": [
+  "who",
+  "which",
+  "whom",
+  "whose"
+  ],
+  "answer": "who"
+  },
+  {
+  "question": "Identify the correct sentence:",
+  "options": [
+  "I have seen her yesterday.",
+  "I saw her yesterday.",
+  "I seen her yesterday.",
+  "I have saw her yesterday."
+  ],
+  "answer": "I saw her yesterday."
+  },
+  {
+  "question": "Choose the correct tag question: She can drive, _____?",
+  "options": [
+  "can’t she",
+  "doesn’t she",
+  "isn’t she",
+  "does she"
+  ],
+  "answer": "can’t she"
+  },
+  {
+  "question": "Select the correct form of verb: 'If he ____ earlier, he would not have missed the train.'",
+  "options": [
+  "had come",
+  "came",
+  "comes",
+  "would come"
+  ],
+  "answer": "had come"
+  },
+  {
+  "question": "Choose the correct sentence:",
+  "options": [
+  "She prefers tea than coffee.",
+  "She prefers tea to coffee.",
+  "She prefers tea over coffee.",
+  "She prefers tea on coffee."
+  ],
+  "answer": "She prefers tea to coffee."
+  },
+  {
+  "question": "Identify the correct indirect speech: He said, 'I have never seen such a place.'",
+  "options": [
+  "He said that he had never seen such a place.",
+  "He said that he has never seen such a place.",
+  "He said that he never saw such a place.",
+  "He said that he never seen such a place."
+  ],
+  "answer": "He said that he had never seen such a place."
+  },
+  {
+  "question": "Fill in the blank with correct article: It was _____ honor to meet her.",
+  "options": [
+  "a",
+  "an",
+  "the",
+  "no article"
+  ],
+  "answer": "an"
+  },
+  {
+  "question": "Choose the correct form: The teacher advised me _____ harder.",
+  "options": [
+  "study",
+  "studying",
+  "to study",
+  "studies"
+  ],
+  "answer": "to study"
+  },
+  {
+  "question": "Choose the correct sentence using the subjunctive mood:",
+  "options": [
+  "If I was you, I would apologize.",
+  "If I were you, I would apologize.",
+  "If I am you, I would apologize.",
+  "If I be you, I would apologize."
+  ],
+  "answer": "If I were you, I would apologize."
+  },
+  {
+  "question": "Identify the sentence with correct inversion:",
+  "options": [
+  "Never I have seen such a beautiful place.",
+  "Never have I seen such a beautiful place.",
+  "Never I saw such a beautiful place.",
+  "Never seen I such a beautiful place."
+  ],
+  "answer": "Never have I seen such a beautiful place."
+  },
+  {
+  "question": "Choose the sentence correctly using a participle phrase:",
+  "options": [
+  "Walking down the street, the rain started suddenly.",
+  "Walking down the street, I saw the rain started suddenly.",
+  "Walking down the street, I saw a man.",
+  "Walking down the street, the man saw me."
+  ],
+  "answer": "Walking down the street, I saw a man."
+  },
+  {
+  "question": "Select the sentence with correct use of phrasal verb:",
+  "options": [
+  "She gave up smoking last year.",
+  "She gave in smoking last year.",
+  "She gave out smoking last year.",
+  "She gave on smoking last year."
+  ],
+  "answer": "She gave up smoking last year."
+  },
+  {
+  "question": "Choose the correct sentence with complex sentence structure:",
+  "options": [
+  "Because it was raining, but I went outside.",
+  "Although it was raining, I went outside.",
+  "Though it was raining but I went outside.",
+  "Because it was raining, so I went outside."
+  ],
+  "answer": "Although it was raining, I went outside."
+  },
+  {
+  "question": "Identify the correct use of collocation:",
+  "options": [
+  "Make a decision",
+  "Do a decision",
+  "Take a decision",
+  "Both 'Make a decision' and 'Take a decision'"
+  ],
+  "answer": "Both 'Make a decision' and 'Take a decision'"
+  },
+  {
+  "question": "Choose the correct reported speech:",
+  "options": [
+  "He said that he is going to the market.",
+  "He said that he was going to the market.",
+  "He said that he will go to the market.",
+  "He said that he goes to the market."
+  ],
+  "answer": "He said that he was going to the market."
+  },
+  {
+  "question": "Select the sentence with correct modal verb use for advice:",
+  "options": [
+  "You should to see a doctor.",
+  "You should see a doctor.",
+  "You should seeing a doctor.",
+  "You should saw a doctor."
+  ],
+  "answer": "You should see a doctor."
+  },
+  {
+  "question": "Choose the correct form of conditional sentence (third conditional):",
+  "options": [
+  "If I had studied, I would pass the exam.",
+  "If I had studied, I would have passed the exam.",
+  "If I studied, I would have passed the exam.",
+  "If I studied, I would pass the exam."
+  ],
+  "answer": "If I had studied, I would have passed the exam."
+  },
+  {
+  "question": "Select the correct use of relative clause:",
+  "options": [
+  "The book which I bought yesterday is interesting.",
+  "The book who I bought yesterday is interesting.",
+  "The book whom I bought yesterday is interesting.",
+  "The book whose I bought yesterday is interesting."
+  ],
+  "answer": "The book which I bought yesterday is interesting."
+  },
+  {
+  "question": "Identify the correct sentence with correct tense usage:",
+  "options": [
+  "By next year, I will complete my studies.",
+  "By next year, I will have completed my studies.",
+  "By next year, I have completed my studies.",
+  "By next year, I completed my studies."
+  ],
+  "answer": "By next year, I will have completed my studies."
+  },
+  {
+  "question": "Choose the correct sentence with correct passive infinitive:",
+  "options": [
+  "He wants to be invited to the party.",
+  "He wants invited to the party.",
+  "He wants being invited to the party.",
+  "He wants invite to the party."
+  ],
+  "answer": "He wants to be invited to the party."
+  },
+  {
+  "question": "Select the sentence with correct phrasal verb meaning:",
+  "options": [
+  "She looked after her younger brother.",
+  "She looked for her younger brother.",
+  "She looked up her younger brother.",
+  "She looked into her younger brother."
+  ],
+  "answer": "She looked after her younger brother."
+  },
+  {
+  "question": "Fill in the blank with correct preposition: He is good _____ playing chess.",
+  "options": [
+  "in",
+  "at",
+  "on",
+  "for"
+  ],
+  "answer": "at"
+  },
+  {
+  "question": "Choose the correct sentence with inversion in conditional:",
+  "options": [
+  "Had I known, I would have helped you.",
+  "If I had known, I would have helped you.",
+  "Had I knew, I would have helped you.",
+  "Had I know, I would have helped you."
+  ],
+  "answer": "Had I known, I would have helped you."
+  },
+  {
+  "question": "Identify the correct sentence using a gerund as subject:",
+  "options": [
+  "To swim is a good exercise.",
+  "Swimming is a good exercise.",
+  "Swim is a good exercise.",
+  "Swam is a good exercise."
+  ],
+  "answer": "Swimming is a good exercise."
+  },
+  {
+  "question": "Choose the correct sentence with correct collocation:",
+  "options": [
+  "He took a heavy decision.",
+  "He made a heavy decision.",
+  "He made a difficult decision.",
+  "He did a difficult decision."
+  ],
+  "answer": "He made a difficult decision."
+  }
+  ]
