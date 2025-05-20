@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Premium Site with Light/Dark Mode</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700;900&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --gold: #ffd700;
+      --gold-dark: #cca300;
+      --bg-dark: #0e0e1a;
+      --bg-light: #f9f9f9;
+      --text-dark: #fff;
+      --text-light: #222;
+      --header-bg-dark: rgba(10,10,20,0.98);
+      --header-bg-light: rgba(255,255,255,0.95);
+      --menu-bg-dark: #22223f;
+      --menu-bg-light: #eee;
+      --menu-text-dark: #fffacd;
+      --menu-text-light: #222;
+      --link-bg-dark: linear-gradient(to right, #ffd700, #ffcc00);
+      --link-bg-light: linear-gradient(to right, #f0c000, #d4a200);
+    }
+
+    /* Dark mode default */
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: var(--bg-dark);
+      color: var(--text-dark);
+      overflow-x: hidden;
+      transition: background 0.5s, color 0.5s;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: var(--header-bg-dark);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 20px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 0 12px var(--gold);
+      transition: background 0.5s, color 0.5s;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo img {
+      height: 35px;
+      transition: filter 0.5s;
+    }
+
+    .logo span {
+      font-weight: 800;
+      font-size: 20px;
+      display: flex;
+      align-items: center;
+      color: var(--text-dark);
+      transition: color 0.5s;
+    }
+
+    .premium-icon {
+      width: 22px;
+      margin-left: 6px;
+      filter: drop-shadow(0 0 4px var(--gold));
+      transition: filter 0.5s;
+    }
+
+    .menu-toggle {
+      font-size: 30px;
+      cursor: pointer;
+      color: var(--gold);
+      transition: transform 0.3s ease, color 0.5s;
+    }
+
+    .menu-toggle:hover {
+      transform: scale(1.1);
+    }
+
+    .menu {
+      position: absolute;
+      top: 75px;
+      right: 30px;
+      background: var(--menu-bg-dark);
+      border-radius: 12px;
+      display: none;
+      flex-direction: column;
+      width: 180px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.7);
+      z-index: 1100;
+      transition: background 0.5s, color 0.5s;
+    }
+
+    .menu a {
+      padding: 14px 18px;
+      color: var(--menu-text-dark);
+      text-decoration: none;
+      border-bottom: 1px solid #333;
+      transition: background 0.3s ease, color 0.5s;
+    }
+
+    .menu a:hover {
+      background: #33335a;
+    }
+
+    .slider {
+      width: 100%;
+      max-width: 600px;
+      height: 180px;
+      margin: 20px auto;
+      border-radius: 14px;
+      overflow: hidden;
+      position: relative;
+      box-shadow: 0 0 15px var(--gold);
+      transition: box-shadow 0.5s;
+    }
+
+    .slides {
+      display: flex;
+      animation: slide 17s infinite ease-in-out;
+    }
+
+    .slides img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      transition: filter 4s;
+    }
+
+    @keyframes slide {
+      0% { transform: translateX(0%); }
+      33% { transform: translateX(-300%); }
+      66% { transform: translateX(-200%); }
+      100% { transform: translateX(0%); }
+    }
+
+    .link-boxes {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      padding: 25px 15px;
+    }
+
+    .link-boxes a {
+      background: var(--link-bg-dark);
+      color: #111;
+      padding: 10px 20px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 14px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+      transition: all 0.3s ease;
+    }
+
+    .link-boxes a:hover {
+      transform: scale(1.06);
+      background: linear-gradient(to right, #fff400, #ffc107);
+    }
+
+    /* Light mode styles */
+    body.light-mode {
+      background: var(--bg-light);
+      color: var(--text-light);
+    }
+
+    body.light-mode header {
+      background: var(--header-bg-light);
+      box-shadow: 0 0 12px var(--gold-dark);
+      color: var(--text-light);
+    }
+
+    body.light-mode .logo span {
+      color: var(--text-light);
+    }
+
+    body.light-mode .premium-icon {
+      filter: drop-shadow(0 0 4px var(--gold-dark));
+    }
+
+    body.light-mode .menu-toggle {
+      color: var(--gold-dark);
+    }
+
+    body.light-mode .menu {
+      background: var(--menu-bg-light);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    }
+
+    body.light-mode .menu a {
+      color: var(--menu-text-light);
+      border-bottom: 1px solid #ccc;
+    }
+
+    body.light-mode .menu a:hover {
+      background: #ddd;
+      color: #111;
+    }
+
+    body.light-mode .slider {
+      box-shadow: 0 0 15px var(--gold-dark);
+    }
+
+    body.light-mode .slides img {
+      filter: brightness(0.9);
+    }
+
+    body.light-mode .link-boxes a {
+      background: var(--link-bg-light);
+      color: #111;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    }
+
+    /* Light/Dark toggle button */
+    .toggle-switch {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      user-select: none;
+      color: var(--gold);
+      font-weight: 600;
+      font-size: 16px;
+      transition: color 0.5s;
+    }
+
+    body.light-mode .toggle-switch {
+      color: var(--gold-dark);
+    }
+
+    .toggle-switch svg {
+      width: 24px;
+      height: 24px;
+      fill: currentColor;
+      transition: transform 0.5s ease;
+    }
+
+    /* Small devices */
+    @media (max-width: 500px) {
+      .slider {
+        height: 140px;
+      }
+
+      .slides img {
+        height: 140px;
+      }
+
+      .logo span {
+        font-size: 17px;
+      }
+
+      .menu {
+        width: 160px;
+        right: 10px;
+      }
+
+      .toggle-switch {
+        font-size: 14px;
+        gap: 5px;
+      }
+      .menu a {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 18px;
+      color: var(--menu-text-dark);
+      text-decoration: none;
+      border-bottom: 1px solid #333;
+      transition: background 0.3s ease, color 0.5s;
+      }
+      
+      .menu a:hover {
+      background: #33335a;
+      }
+      
+      .menu-icon {
+      width: 20px;
+      height: 20px;
+      object-fit: contain;
+      filter: drop-shadow(0 0 2px var(--gold));
+      }
+
+      .toggle-switch svg {
+        width: 20px;
+        height: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo">
+    <img src="https://i.postimg.cc/y65PnwgV/speech-bubble.png" alt="Logo" />
+    <span>Bangla Quiz Hub
+      <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
+      <dotlottie-player src="https://lottie.host/df0c9417-5ae0-4ce5-8dbe-394577955ab9/PIUvuDxZED.lottie" background="transparent" speed="1" style="width: 60px; height: 60px" loop autoplay></dotlottie-player>
+    </span>
+  </div>
+  <div style="display: flex; align-items:center; gap: 15px;">
+    <div class="toggle-switch" id="modeToggle" title="Light / Dark Mode">
+      <svg id="modeIcon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" >
+        <!-- Moon icon initially -->
+        <path d="M21.75 15.56a9 9 0 01-12.3-12.3 7 7 0 0012.3 12.3z"/>
+      </svg>
+      <span id="modeText">Night</span>
+    </div>
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+  </div>
+</header>
+
+<div class="menu" id="dropdownMenu">
+<a href="index.html">
+<img src="https://i.postimg.cc/KjrRPPJH/home.png" alt="Home " class="menu-icon" />
+Home
+</a>
+  <a href="rank.html">
+    <img src="https://i.postimg.cc/hjYvxFDw/ranking.png" alt="হোম আইকন" class="menu-icon" />
+    My Rank 
+  </a>
+  <a href="history.html">
+    <img src="https://i.postimg.cc/251SYkNt/time-management.png" alt="অ্যাপ সার্ভিস আইকন" class="menu-icon" />
+    History
+  </a>
+  <a href="faq.html">
+    <img src="https://i.postimg.cc/Y0rKnf6Q/faq.png" alt="যোগাযোগ আইকন" class="menu-icon" />
+    FAQ
+  </a>
+  <a href="dev.html">
+  <img src="https://i.postimg.cc/hvcz2wZM/development.png" alt="যোগাযোগ আইকন" class="menu-icon" />
+  Contact Dev
+  </a>
+</div>
+
+<script>
+  const modeToggle = document.getElementById("modeToggle");
+  const modeIcon = document.getElementById("modeIcon");
+  const modeText = document.getElementById("modeText");
+  const body = document.body;
+
+  // SVG icons for sun and moon
+  const sunIcon = '<path d="M12 18a6 6 0 100-12 6 6 0 000 12zm0-14v-2m0 18v-2m8-8h-2m-12 0H2m15.364-7.364l-1.414 1.414M6.05 17.95l-1.414 1.414m12.728 0l-1.414-1.414M6.05 6.05L4.636 4.636"/>';
+  const moonIcon = '<path d="M21.75 15.56a9 9 0 01-12.3-12.3 7 7 0 0012.3 12.3z"/>';
+
+  function setMode(dark) {
+    if(dark) {
+      body.classList.remove('light-mode');
+      modeIcon.innerHTML = moonIcon;
+      modeText.textContent = 'Night';
+    } else {
+      body.classList.add('light-mode');
+      modeIcon.innerHTML = sunIcon;
+      modeText.textContent = 'Day';
+    }
+  }
+
+  // Initial mode - default dark
+  let darkMode = true;
+  setMode(darkMode);
+
+  modeToggle.addEventListener('click', () => {
+    darkMode = !darkMode;
+    setMode(darkMode);
+  });
+
+  // Menu toggle
+  function toggleMenu() {
+    const menu = document.getElementById("dropdownMenu");
+    menu.style.display = menu.style.display === "flex" ? "none" : "flex";
+  }
+
+  window.addEventListener("click", function(e) {
+    const menu = document.getElementById("dropdownMenu");
+    const toggle = document.querySelector(".menu-toggle");
+    if (!menu.contains(e.target) && !toggle.contains(e.target)) {
+      menu.style.display = "none";
+    }
+  });
+</script>
+<!-- Premium Firebase Auth UI -->
+<div class="glass-auth-container">
+  <div class="glass-auth-box">
+    <div class="glass-header">
+      <img src="https://i.postimg.cc/KcMbbrrd/20250518-220859.png" alt="Logo" />
+      <h1>BANGLA QUIZ HUB</h1>
+    </div>
+
+    <h2 id="glass-auth-title">Sign Up</h2>
+    <input type="email" id="glass-auth-email" placeholder="Email" />
+    <input type="password" id="glass-auth-password" placeholder="Password" />
+    <button id="glass-auth-submit">Sign Up</button>
+
+    <button id="glass-auth-google" class="glass-google-btn">
+      <img src="https://i.postimg.cc/9Qd947PM/google-symbol.png" alt="Google" />
+      Sign up with Google
+    </button>
+
+    <div class="glass-auth-forgot" onclick="glassForgotPassword()">Forgot Password?</div>
+    <div class="glass-auth-toggle" onclick="glassToggleForm()">Already have an account? Login</div>
+  </div>
+</div>
+
+<!-- Firebase SDK -->
+<script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-auth-compat.js"></script>
+
+<style>
+  .glass-auth-container {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0,0,0,0.5);
+    backdrop-filter: blur(14px);
+    z-index: 99999;
+    font-family: 'Segoe UI', sans-serif;
+  }
+
+  .glass-auth-box {
+    background: rgba(255, 255, 255, 0.06);
+    padding: 35px 30px;
+    width: 90%;
+    max-width: 400px;
+    border-radius: 25px;
+    box-shadow: 0 0 35px rgba(0,0,0,0.4);
+    border: 1px solid rgba(255,255,255,0.2);
+    text-align: center;
+    color: white;
+  }
+
+  .glass-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 25px;
+  }
+
+  .glass-header img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+  }
+
+  .glass-header h1 {
+    font-size: 22px;
+    color: #fff;
+    font-weight: 600;
+  }
+
+  .glass-auth-box h2 {
+    font-size: 24px;
+    margin-bottom: 18px;
+    color: #fff;
+  }
+
+  .glass-auth-box input {
+    width: 100%;
+    padding: 13px;
+    margin: 10px 0;
+    background: rgba(255,255,255,0.07);
+    border: none;
+    border-radius: 12px;
+    color: white;
+    font-size: 15px;
+    outline: none;
+  }
+
+  .glass-auth-box button {
+    width: 100%;
+    padding: 13px;
+    margin-top: 12px;
+    font-size: 15px;
+    font-weight: bold;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: 0.3s ease;
+  }
+
+  #glass-auth-submit {
+    background: linear-gradient(135deg, #00f260, #0575e6);
+    color: white;
+  }
+
+  .glass-google-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    background: white;
+    color: #000;
+    margin-top: 10px;
+  }
+
+  .glass-google-btn img {
+    width: 20px;
+    height: 20px;
+  }
+
+  .glass-auth-forgot,
+  .glass-auth-toggle {
+    font-size: 14px;
+    margin-top: 15px;
+    color: #ccc;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
+  .glass-auth-forgot:hover,
+  .glass-auth-toggle:hover {
+    color: #fff;
+  }
+
+  @media(max-width: 420px) {
+    .glass-auth-box {
+      padding: 25px 20px;
+    }
+
+    .glass-auth-box h2 {
+      font-size: 22px;
+    }
+
+    .glass-header h1 {
+      font-size: 20px;
+    }
+  }
+</style>
+
+<script>
+  const firebaseConfig = {
+  apiKey: "AIzaSyCl1854qJoh3hDbYTEwpILtdV3BC6xxYmE",
+  authDomain: "bangla-quiz-hub-ffb2a.firebaseapp.com",
+  projectId: "bangla-quiz-hub-ffb2a",
+  storageBucket: "bangla-quiz-hub-ffb2a.firebasestorage.app",
+  messagingSenderId: "798921821758",
+  appId: "1:798921821758:web:75df4b29b4e16341e5cb6f",
+  measurementId: "G-WX2PHQQFKL"
+};
+
+  firebase.initializeApp(firebaseConfig);
+  const auth = firebase.auth();
+
+  let isLogin = false;
+  const email = document.getElementById('glass-auth-email');
+  const password = document.getElementById('glass-auth-password');
+  const title = document.getElementById('glass-auth-title');
+  const submit = document.getElementById('glass-auth-submit');
+
+  function glassToggleForm() {
+    isLogin = !isLogin;
+    title.innerText = isLogin ? "Login" : "Sign Up";
+    submit.innerText = isLogin ? "Login" : "Sign Up";
+    document.querySelector('.glass-auth-toggle').innerText =
+      isLogin ? "Don't have an account? Sign Up" : "Already have an account? Login";
+  }
+
+  submit.addEventListener('click', () => {
+    if (!email.value || !password.value) return alert("Please fill all fields.");
+    if (isLogin) {
+      auth.signInWithEmailAndPassword(email.value, password.value)
+        .then(() => location.href = "index.html")
+        .catch(err => alert(err.message));
+    } else {
+      auth.createUserWithEmailAndPassword(email.value, password.value)
+        .then(() => location.href = "index.html")
+        .catch(err => alert(err.message));
+    }
+  });
+
+  document.getElementById('glass-auth-google').addEventListener('click', () => {
+    const provider = new firebase.auth.GoogleAuthProvider();
+    auth.signInWithPopup(provider)
+      .then(() => location.href = "index.html")
+      .catch(err => alert(err.message));
+  });
+
+  function glassForgotPassword() {
+    const userEmail = prompt("Enter your email for reset:");
+    if (userEmail) {
+      auth.sendPasswordResetEmail(userEmail)
+        .then(() => alert("Password reset email sent!"))
+        .catch(err => alert(err.message));
+    }
+  }
+
+  auth.onAuthStateChanged(user => {
+    if (user) location.href = "index.html";
+  });
+</script>
